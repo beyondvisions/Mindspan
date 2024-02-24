@@ -6,18 +6,18 @@ const Dropcabin = () => {
     'jandouba', 'jandoubaaaaaaaa', 'jandouba', 'jandouba', 'jandouba', 
     'jandouba', 'jandouba', 'jandouba', 'jandouba', 'jandouba', 
     'jandouba', 'jandouba', 'jandouba', 'jandouba', 'jandouba', 
+    'jandouba', 'jandouba', 'jandouba', 'jandouba', 'jandouba',
     'jandouba', 'jandouba', 'jandouba', 'jandouba', 'jandouba'
   ]);
+
   const [numVisibleItems, setNumVisibleItems] = useState(calculateNumVisibleItems());
 
   useEffect(() => {
     function handleResize() {
-      const newNumVisibleItems = calculateNumVisibleItems();
-      setNumVisibleItems(newNumVisibleItems);
+      setNumVisibleItems(calculateNumVisibleItems());
     }
 
     window.addEventListener('resize', handleResize);
-
     return () => {
       window.removeEventListener('resize', handleResize);
     };

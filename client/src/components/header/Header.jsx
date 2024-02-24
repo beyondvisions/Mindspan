@@ -147,34 +147,17 @@ useEffect(() => {
   <div className="containerdropdownkbira">
   
   
-  <Link>
 <Dropdownn
       categories={categories}
-      lab="santé et mentale"
+      lab2="santé et mentale"
+      lab1='parent et enfants'
+      lab='événements'
+      lab3='Cabinet'
+
     >
         
         </Dropdownn>
-        </Link>
-<Link>
-<Dropdownn
-      categories={categories}
-      lab='événements'
-    >      
-        </Dropdownn>
-        </Link>
-    <Link>
-    <Dropdownn
-          categories={categories}
-          lab='parent et enfants'
-        >
-            
-            </Dropdownn>
-            </Link>
-            <Link>
-    <Dropcabin
-        >
-            </Dropcabin>
-            </Link>       
+          
 </div>
     </>
   );

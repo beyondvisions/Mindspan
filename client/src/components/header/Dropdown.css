@@ -1,17 +1,15 @@
 .containerdropdown {
     display: flex;
-    justify-content: left;
-    align-items: center;
-    height: fit-content;
+   flex-direction: column;
+   width: 100%;
 
 }
 .containerdropdowncateg {
     display: flex;
-    align-items: right;
-    justify-content: center;
-    padding-right: 20px;
-    z-index: 999;
-    
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 20px;  
     
 }
 .containerulcateg {
@@ -30,19 +28,24 @@
 }
 .containerdropdownsubcateg {
     padding: 0 30px;
-    position: absolute;
-    top: 44px; 
-    left: 0;
-    width:99%;
-    display: none;
-    justify-content: start;
+    display: flex;
+    width: 100%;
+    justify-content:flex-start;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
     background-color: #D294BB;
-    display: none;
-    height: 200px;
+    height: 0; /* Initial height set to 0 */
+    overflow: hidden; /* Hide overflowing content */
+    opacity: 0; /* Initial opacity set to 0 */
+    transition: opacity 0.5s ease, height 0.5s ease; /* Apply transition for opacity and height */
 }
+
+
 .containerdropdownsubcateg.active {
     display: flex;
+    opacity: 1;
+    transition: opacity 0.7s ease; 
+    height: 200px; /* Expand height on hover */
+
 }
 
 .containerdropdownsubcateg ul {
@@ -96,7 +99,6 @@
 }
 .containerdropdowncateg span:hover + .containerdropdownsubcateg, .containerdropdownsubcateg:hover {
     display: flex;
-    
 }
 @media (max-width: 750px)  {
     .containerdropdownsubcateg ul li {
@@ -104,5 +106,12 @@
     }
     .containerdropdown{
         padding: 0 10px;
+    }
+    .containerdropdowncateg {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        gap: 40px;
+        padding: 20px;  
+        
     }
 }
