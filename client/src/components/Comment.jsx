@@ -67,10 +67,10 @@ export default function Comment({ comment, onLike, onEdit, onDelete }) {
           <span className='font-bold mr-1 text-xs truncate'>
             {user ? `@${user.username}` : 'anonymous user'}
           </span>
-          <span className='text-gray-500 text-xs'>
+          <span className='text-gray-500 text-xs'>   
             {moment(comment.createdAt).fromNow()}
           </span>
-          {isModified && <span className='text-gray-500 text-xs'>the comment is modified</span>}
+          {isModified && <span className='text-gray-500 text-xs'>&nbsp; (the comment is modified)</span>}
         </div>
         {isEditing ? (
           <>
@@ -83,7 +83,8 @@ export default function Comment({ comment, onLike, onEdit, onDelete }) {
               <Button
                 type='button'
                 size='sm'
-                gradientDuoTone='purpleToBlue'
+                style={{ backgroundColor: '#D294BB' }}
+                className="focus:border-custom-color focus:ring-custom-color dark:focus:border-custom-color dark:focus:ring-custom-color"
                 onClick={handleSave}
               >
                 Save
@@ -91,8 +92,8 @@ export default function Comment({ comment, onLike, onEdit, onDelete }) {
               <Button
                 type='button'
                 size='sm'
-                gradientDuoTone='purpleToBlue'
-                outline
+                color='failure'
+                
                 onClick={() => setIsEditing(false)}
               >
                 Cancel

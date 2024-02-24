@@ -122,13 +122,13 @@ export default function CommentSection({ postId }) {
           />
           <Link
             to={'/dashboard?tab=profile'}
-            className='text-xs text-cyan-600 hover:underline'
+            className='text-xs text-custom-color-600 hover:underline'
           >
             @{currentUser.username}
           </Link>
         </div>
       ) : (
-        <div className='text-sm text-teal-500 my-5 flex gap-1'>
+        <div className='text-sm text-custom-color text-teal-500 my-5 flex gap-1'>
           You must be signed in to comment.
           <Link className='text-blue-500 hover:underline' to={'/sign-in'}>
             Sign In
@@ -137,21 +137,27 @@ export default function CommentSection({ postId }) {
       )}
       {currentUser && (
         <form
+        style={{borderColor:'#D294BB'}}
           onSubmit={handleSubmit}
           className='border border-teal-500 rounded-md p-3'
         >
           <Textarea
             placeholder='Add a comment...'
             rows='3'
-            maxLength='200'
+            maxLength='300'
             onChange={(e) => setComment(e.target.value)}
             value={comment}
+            class="block w-full border disabled:cursor-not-allowed disabled:opacity-50 bg-gray-50 border-gray-300 text-gray-900 focus:border-custom-color focus:ring-custom-color dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-custom-color dark:focus:ring-custom-color p-2.5 text-sm rounded-lg" 
+
           />
           <div className='flex justify-between items-center mt-5'>
             <p className='text-gray-500 text-xs'>
-              {200 - comment.length} characters remaining
+              {300 - comment.length} characters remaining
             </p>
-            <Button outline gradientDuoTone='purpleToBlue' type='submit'>
+            <Button  type='submit'
+                  className="focus:border-custom-color focus:ring-custom-color dark:focus:border-custom-color dark:focus:ring-custom-color"
+
+            style={{ backgroundColor: '#D294BB' }}>
               Submit
             </Button>
           </div>

@@ -78,7 +78,6 @@ const Dropdownn = ({ categories, lab, lab1, lab2, lab3 }) => {
   } else if (activeDropdown === 'Cabinet') {
     selectedLabel = "/cabinet?adresse=";
   } 
-  console.log(`${selectedLabel}`);
 
   return (
     <div className='containerdropdown'

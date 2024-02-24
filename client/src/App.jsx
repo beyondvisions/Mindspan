@@ -22,9 +22,10 @@ import Cabinet from './pages/cabinet/Cabinet';
 import ContactComponent from './pages/ContactUs/ContactComponent';
 import Aboutus from './pages/AboutUs/Aboutus'
 import FAQ from './pages/FAQ/FAQ'
-import Home from './pages/home/Home';
 import PolicyComponent from './pages/policy/PolicyComponent'
-
+import Wronpath from './pages/worngpath/Wronpath'
+import Home from './pages/home/Home';
+import './index.css';
 export default function App() {
   return (
     <BrowserRouter>
@@ -32,7 +33,6 @@ export default function App() {
       <Header />
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/sign-up' element={<SignUp />} />
         <Route path='/sign-in' element={<SignIn/>} />
         <Route path='/verify' element={<VerificationPage/>} />
         <Route path='/password' element={<Password/>} />
@@ -45,7 +45,7 @@ export default function App() {
         <Route path='/cabinet' element={<Cabinet/>} />
         <Route path='/aboutUs' element={<Aboutus/>} />
         <Route path='/search' element={<Search />} />
-        <Route path="*" element={<Search/>} />
+        <Route path="*" element={<Wronpath/>} />
         <Route element={<PrivateRoute />}>
           <Route path='/dashboard' element={<Dashboard />} />
         </Route>

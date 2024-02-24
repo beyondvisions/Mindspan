@@ -56,23 +56,39 @@ export default function PostPage() {
         <Spinner size='xl' />
       </div>
     );
+  let selectedLabel="/Evenement?searchTerm=&sort=desc&category=événements&subcategory=";
+
+
   return (
     <main className='p-3 flex flex-col max-w-6xl mx-auto min-h-screen'>
-      <h1 className='text-3xl text-custom-color mt-10 p-3 text-center font-serif max-w-2xl mx-auto lg:text-4xl'>
+<h1 className='text-3xl mt-10 p-3 text-center max-w-2xl mx-auto lg:text-4xl text-custom-color'>
+
         {post && post.title}
       </h1>
+      <div style={{display:'flex',flexDirection:'row',justifyContent:'center'}}>
       <Link
-        to={`/search?category=${post && post.category}`}
+        to={`/?category=${post && post.category}`}
         className='self-center mt-5'
       >
         <Button color='gray' pill size='xs'>
           {post && post.category}
         </Button>
+        
       </Link>
+      <Link
+        to={`/search?category=${post && post.category}`}
+        className='self-center mt-5'
+      >
+        <Button color='gray' pill size='xs'>
+          {post && post.subcategory}
+        </Button>
+        
+      </Link>
+      </div>
       <img
         src={post && post.image}
         alt={post && post.title}
-        className='   mx-auto  max-w-2xl rounded-xl '
+        className='mt-10 p-3 max-h-[600px] w-full object-cover'
       />
       <div className='flex justify-between p-3 border-b border-slate-500 mx-auto w-full max-w-2xl text-xs'>
         <span>{post && new Date(post.createdAt).toLocaleDateString()}</span>
@@ -84,7 +100,8 @@ export default function PostPage() {
         className='p-3 max-w-2xl mx-auto w-full post-content'
         dangerouslySetInnerHTML={{ __html: post && post.content }}
       ></div>
-      
+      <div className='max-w-4xl mx-auto w-full'>
+      </div>
       <CommentSection postId={post._id} />
 
       <div className='flex flex-col justify-center items-center mb-5'>
