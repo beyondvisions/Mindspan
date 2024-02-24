@@ -108,6 +108,17 @@ console.log(sidebarData.category);
       console.error('Error fetching more posts:', error);
     }
   };
+  useEffect(() => {
+    const urlParams = new URLSearchParams(location.search);
+    const adresseFromUrl = urlParams.get('subcategory');
+    if (adresseFromUrl !== null) {
+      const filteredAdresse = adresse.filter(subCategory => subCategory.catego === 'Parent et enfants');
+      const index = filteredAdresse.findIndex(subCategory => subCategory.name === adresseFromUrl);
+      if (index !== -1) {
+        setClickedFilterIndex(index);
+      }
+    }
+  }, [location.search, adresse]);
   return (
     <div >
       <div className='intropageinfocontainer'>

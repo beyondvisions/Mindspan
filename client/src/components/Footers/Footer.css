@@ -3,6 +3,8 @@
     color: white;
 }
 .containersocial img {
+    cursor: pointer;
+
     width: 50px;
 }
 .footercontainer {
@@ -27,6 +29,8 @@
 }
 .titlecateg{
     font-size: 1rem;
+    cursor: pointer;
+
 }
 
 .des {

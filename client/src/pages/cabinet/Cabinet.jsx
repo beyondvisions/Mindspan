@@ -43,6 +43,7 @@ const Cabinet = () => {
     const cardsPerPage = 9;
     const [currentIndex, setCurrentIndex] = useState(0);
 
+
     useEffect(() => {
         const urlParams = new URLSearchParams(location.search);
         const adresseFromUrl = urlParams.get('adresse');
@@ -77,7 +78,17 @@ const Cabinet = () => {
             navigate(`/cabinet?${urlParams.toString()}`);
         }
     };
+  useEffect(() => {
+    const urlParams = new URLSearchParams(location.search);
+    const adresseFromUrl1 = urlParams.get('adresse');
 
+    if (adresseFromUrl1 !== null) {
+      const index = adresse.indexOf(adresseFromUrl1);
+      if (index !== -1) {
+        setClickedFilterIndex(index);
+      }
+    }
+  }, [location.search]);
     const totalCards = cabinetsfetched.length;
     const totalSlides = Math.ceil(totalCards / cardsPerPage);
 

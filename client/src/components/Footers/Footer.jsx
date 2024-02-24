@@ -4,6 +4,8 @@ import './Footer.css';
 import { IonIcon } from '@ionic/react';
 import { chevronForwardOutline } from 'ionicons/icons';
 import { logoFacebook, logoInstagram, logoLinkedin } from 'ionicons/icons';
+import { Link } from 'react-router-dom';
+
 const Footer = () => {
     const [categories, setCategories] = useState([]);
 
@@ -39,67 +41,121 @@ const Footer = () => {
                 </div>
                 <div className='conatinercategories'>
             <div className='titlecateg'>
+             <Link to='/Evenement'>
               <h3>Événements</h3>
+              </Link>
             </div>
             {categories.map((category, index) => (
               category.catego.toLowerCase() === 'événements' &&
               <div className='boxcateg' key={index}>
+                <Link to={`/Evenement?searchTerm=&sort=desc&category=événements&subcategory=${category.name.replace(/ /g, '+')}`}>
                 <IonIcon icon={chevronForwardOutline} id='iconcart' />
                 <span>{category.name}</span>
+                </Link>
               </div>
             ))}
           </div>
 
           <div className='conatinercategories'>
             <div className='titlecateg'>
+              <Link to="/ParentEtEnfant">
               <h3>Parent et enfants</h3>
+              </Link>
             </div>
             {categories.map((category, index) => (
               category.catego.toLowerCase() === 'parent et enfants' &&
               <div className='boxcateg' key={index}>
+                <Link to={`/ParentEtEnfant?searchTerm=&sort=desc&category=événements&subcategory=${category.name.replace(/ /g, '+')}`}>
                 <IonIcon icon={chevronForwardOutline} id='iconcart' />
                 <span>{category.name}</span>
+                </Link>
               </div>
             ))}
           </div>
 
           <div className='conatinercategories'>
             <div className='titlecateg'>
-              <h3>Santé et Mentale</h3>
+              <Link to='/MentalHelath'>
+              <h3>Santé Mentale</h3>
+              </Link>
             </div>
             {categories.map((category, index) => (
               category.catego.toLowerCase() === 'santé et mentale' &&
               <div className='boxcateg' key={index}>
+                <Link to={`/MentalHelath?searchTerm=&sort=desc&category=événements&subcategory=${category.name.replace(/ /g, '+')}`}>
                 <IonIcon icon={chevronForwardOutline} id='iconcart' />
                 <span>{category.name}</span>
+                </Link>
               </div>
             ))}
           </div>        
           <div className='conatinercategories'>
             <div className='titlecateg'>
+              <Link to='/cabinet'>
               <h3>cabinets</h3>
+              </Link>
             </div>
-            <div className='boxcateg'><IonIcon icon={chevronForwardOutline} id='iconcart' /><span>Tunis</span></div>
-            <div className='boxcateg'><IonIcon icon={chevronForwardOutline} id='iconcart' /><span>Bizerte</span></div>
-            <div className='boxcateg'><IonIcon icon={chevronForwardOutline} id='iconcart' /><span>Sousse</span></div>
-            <div className='boxcateg'><IonIcon icon={chevronForwardOutline} id='iconcart' /><span>Mahdia</span></div>
+            <div className='boxcateg'>
+              <Link to="/cabinet?adresse=Tunis">
+              <IonIcon icon={chevronForwardOutline} id='iconcart' /><span>Tunis</span>
+              </Link>
+              </div>
+            <div className='boxcateg'>
+              <Link to="/cabinet?adresse=Bizerte">
+              <IonIcon icon={chevronForwardOutline} id='iconcart' /><span>Bizerte</span>
+              </Link>
+              </div>
+            <div className='boxcateg'>
+              <Link to="/cabinet?adresse=Sousse">
+              <IonIcon icon={chevronForwardOutline} id='iconcart' /><span>Sousse</span>
+              </Link>
+              </div>
+            <div className='boxcateg'>
+              <Link to="/cabinet?adresse=Mahdia">
+              <IonIcon icon={chevronForwardOutline} id='iconcart' /><span>Mahdia</span>
+              </Link>
+              </div>
           
 
 
           </div> 
-                <div className='containercategres'>
-                    <div>
-                    <div className='boxcateg'><IonIcon icon={chevronForwardOutline} id='iconcart' /><span>santé mentale</span></div>
-                    <div className='boxcateg'><IonIcon icon={chevronForwardOutline} id='iconcart' /><span>parent et enfant</span></div>
-                    <div className='boxcateg'><IonIcon icon={chevronForwardOutline} id='iconcart' /><span>evenements</span></div>
-                    <div className='boxcateg'><IonIcon icon={chevronForwardOutline} id='iconcart' /><span>cabinets</span></div>
-                    <div className='boxcateg'><IonIcon icon={chevronForwardOutline} id='iconcart' /><span>Home</span></div>
-                    <div className='boxcateg'><IonIcon icon={chevronForwardOutline} id='iconcart' /><span>FAQ</span></div>
-                    <div className='boxcateg'><IonIcon icon={chevronForwardOutline} id='iconcart' /><span>About us</span></div>
-                    <div className='boxcateg'><IonIcon icon={chevronForwardOutline} id='iconcart' /><span>ContactUs</span></div>
+<div className='containercategres'>
+  <div>
+    <div className='boxcateg'>
+      <IonIcon icon={chevronForwardOutline} id='iconcart' />
+      <Link to="/MentalHelath"><span>santé mentale</span></Link>
+    </div>
+    <div className='boxcateg'>
+      <IonIcon icon={chevronForwardOutline} id='iconcart' />
+      <Link to="/ParentEtEnfan"><span>parent et enfant</span></Link>
+    </div>
+    <div className='boxcateg'>
+      <IonIcon icon={chevronForwardOutline} id='iconcart' />
+      <Link to="/ParentEtEnfan"><span>evenements</span></Link>
+    </div>
+    <div className='boxcateg'>
+      <IonIcon icon={chevronForwardOutline} id='iconcart' />
+      <Link to="/cabinet"><span>cabinets</span></Link>
+    </div>
+    <div className='boxcateg'>
+      <IonIcon icon={chevronForwardOutline} id='iconcart' />
+      <Link to="/"><span>Home</span></Link>
+    </div>
+    <div className='boxcateg'>
+      <IonIcon icon={chevronForwardOutline} id='iconcart' />
+      <Link to="/FAQ"><span>FAQ</span></Link>
+    </div>
+    <div className='boxcateg'>
+      <IonIcon icon={chevronForwardOutline} id='iconcart' />
+      <Link to="/aboutUs"><span>About us</span></Link>
+    </div>
+    <div className='boxcateg'>
+      <IonIcon icon={chevronForwardOutline} id='iconcart' />
+      <Link to="/contact"><span>ContactUs</span></Link>
+    </div>
+  </div>
+</div>
 
-                    </div>
-                </div>
                
                 
             </div>
@@ -107,9 +163,15 @@ const Footer = () => {
                 <div className='ecje'><span>&copy; Rights ENETCom Junior Entreprise</span></div>
                 <div className='moreinfo'>
                     <div>
-                    <span>contactez-nous</span>
-                    <span>a propos nous</span>
-                    <span>politique de cinfidentialité</span>
+                    <Link to="contact">
+                      <span>contactez-nous</span>
+                    </Link>
+                    <Link to="/aboutUs">
+                      <span>à propos de nous</span>
+                    </Link>
+                    <Link to="/policy">
+                      <span>politique de confidentialité</span>
+                    </Link>
                     </div>
                 </div>
             </div>

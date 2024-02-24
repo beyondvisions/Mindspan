@@ -17,8 +17,7 @@ export default function Evenement() {
   const [showMore, setShowMore] = useState(false);
   const [subcategories, setSubcategories] = useState([]);
   const [clickedFilterIndex, setClickedFilterIndex] = useState(null);
-  const [adresse, setAdresse] = useState([]); // Assuming 'adresse' is your array of subcategories
-
+  const [adresse, setAdresse] = useState([]);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -33,7 +32,7 @@ export default function Evenement() {
         ...sidebarData,
         searchTerm: searchTermFromUrl || '',
         sort: sortFromUrl || 'desc',
-        subcategory: subcategoryFromUrl || ''
+        subcategory: subcategoryFromUrl || '',
       });
     }
 
@@ -58,8 +57,7 @@ export default function Evenement() {
       try {
         const res = await axios.get('/api/categories/getcategories');
         if (res.status === 200) {
-          setSubcategories(res.data); 
-          
+          setSubcategories(res.data);
           setAdresse(res.data);
         }
       } catch (error) {
@@ -84,15 +82,32 @@ export default function Evenement() {
     });
     navigate(`/Evenement?${urlParams.toString()}`);
   };
+
+  useEffect(() => {
+    const urlParams = new URLSearchParams(location.search);
+    const adresseFromUrl = urlParams.get('subcategory');
+    if (adresseFromUrl !== null) {
+      // Filter the adresse array to consider only subcategories with the category 'événements'
+      const filteredAdresse = adresse.filter(subCategory => subCategory.catego === 'événements');
+      // Find the index of the subcategory in the filtered adresse array
+      const index = filteredAdresse.findIndex(subCategory => subCategory.name === adresseFromUrl);
+      // If the subcategory is found, set the clickedFilterIndex
+      if (index !== -1) {
+        setClickedFilterIndex(index);
+      }
+    }
+  }, [location.search, adresse]);
+  
+  
+
   const handleClick = (index, subCategory) => {
-    setSidebarData(prevState => ({
+    setSidebarData((prevState) => ({
       ...prevState,
-      subcategory: subCategory.name // Assuming the subcategory property exists in the subCategory object
+      subcategory: subCategory.name,
     }));
     setClickedFilterIndex(index);
   };
-  
-  
+
   const handleShowMore = async () => {
     const startIndex = posts.length;
     const urlParams = new URLSearchParams(location.search);
