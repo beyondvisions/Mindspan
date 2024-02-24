@@ -55,7 +55,7 @@ const handleAddSubscriber = async () => {
 <div>
             <div className={styles.hero}>
                 <div className={styles.background_image}>
-                    <img src='home_bg.jpg' alt="" style={{ width: '100%', height: '70vh', objectFit: 'cover' }} />
+                    <img src='home_bg.jpg' alt="" style={{ width: '100%', height: '81vh', objectFit: 'cover' }} />
                     <div className={styles.hero_content_area}>
                         <h1>Strengthen Mental Resilience</h1>
                         <h3>We will help you to improve your mental health</h3>
