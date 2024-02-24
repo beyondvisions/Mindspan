@@ -110,7 +110,7 @@ export const getcomments = async (req, res, next) => {
       .sort({ createdAt: sortDirection })
       .skip(startIndex)
       .limit(limit)
-      .populate('postId').populate('userId')
+      .populate('postId','title').populate('userId',"username")
       ;
     const totalComments = await Comment.countDocuments();
     const now = new Date();

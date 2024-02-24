@@ -1,9 +1,9 @@
-import { Button, Select, TextInput } from 'flowbite-react';
+import {  Button,Select, TextInput } from 'flowbite-react';
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import PostCard from '../components/PostCard';
 import axios from 'axios'; 
-
+import './categoryPage.css'
 export default function Evenement() {
   const [sidebarData, setSidebarData] = useState({
     searchTerm: '',
@@ -82,7 +82,7 @@ export default function Evenement() {
     Object.entries(sidebarData).forEach(([key, value]) => {
       urlParams.set(key, value);
     });
-    navigate(`/Evenement?${urlParams.toString()}`);
+    navigate(`/MentalHelath?${urlParams.toString()}`);
   };
   const handleClick = (index, subCategory) => {
     setSidebarData(prevState => ({
@@ -127,10 +127,11 @@ export default function Evenement() {
                     </div>
                 </div>
             </div>
-        <form  onSubmit={handleSubmit}>
-          <div className='flex flex-row gap-8'>
-          <div className='flex items-center gap-2'>
-            <label className='whitespace-nowrap font-semibold'>Search Term:</label>
+        <form  onSubmit={handleSubmit} className='containerfilter' >
+          <div style={{display:'flex',flexDirection:'column'}}>
+            <div className='deuxinpitcontainer'>
+            <div className='inputcontinaer'>
+            <label style={{display:'flex',alignItems:'center'}}>Search Term:</label>
             <TextInput
               placeholder='Search...'
               id='searchTerm'
@@ -138,44 +139,45 @@ export default function Evenement() {
               value={sidebarData.searchTerm}
               onChange={handleChange}
             />
-          </div>
-          <div className='flex items-center gap-2'>
-            <label className='font-semibold'>Sort:</label>
+              </div>
+              <div  className='inputcontinaer'>
+              <label style={{display:'flex',alignItems:'center'}}>Sort:</label>
             <Select onChange={handleChange} value={sidebarData.sort} id='sort'>
               <option value='desc'>Latest</option>
               <option value='asc'>Oldest</option>
             </Select>
-          </div>
-          <Button type='submit'>
-            Apply Filters
-          </Button>
-          <div className='filtragearticle'>
+            </div>
+            </div>
+            <div style={{display:'flex',flexDirection:'row', padding:'10px',flexWrap:'wrap',height:'auto'}}>
   {adresse
     .filter(subCategory => subCategory.catego === 'Santé et Mentale')
     .map((subCategory, index) => (
       <div
         key={index}
         className={`onefilter ${clickedFilterIndex === index ? 'clicked' : ''}`}
-        onClick={() => handleClick(index, subCategory)} // pass the whole subCategory object
+        onClick={() => handleClick(index, subCategory)} 
         style={{
           backgroundColor: clickedFilterIndex === index ? '#D294BB' : 'white',
           borderColor: clickedFilterIndex === index ? '#D294BB' : 'black',
-          color: clickedFilterIndex === index ? 'white' : '#D294BB'
+          color: clickedFilterIndex === index ? 'white' : '#D294BB',
+        
         }}
+        
       >
-        <span>{subCategory.name}</span>
+        <span >{subCategory.name}</span>
       </div>
     ))}
-</div>
-
-
+            </div>
           </div>
+         
+          <div className='btnfiltre'><Button   type='submit'>
+            Apply Filters
+            </Button>
+            </div>
        
         </form>
         <div className='w-full'>
-        <div className='p-7 flex flex-wrap gap-4'>
-          {/* Render posts or loading indicator */}
-          {!loading && posts.length === 0 && (
+        <div className='p-7 flex flex-wrap gap-4 justify-evenly justify-center-sm'>                 {!loading && posts.length === 0 && (
             <p className='text-xl text-gray-500'>No posts found.</p>
           )}
           {loading && <p className='text-xl text-gray-500'>Loading...</p>}
@@ -192,7 +194,7 @@ export default function Evenement() {
             </button>
           )}
         </div>
-      </div>
+        </div>
     </div>
   );
 }

@@ -33,7 +33,6 @@ export default function UserComments() {
       } else {
         console.error('Failed to update comment');
       }
-      // Close the edit modal after updating
       setShowEditModal(false);
     } catch (error) {
       console.error('Error updating comment:', error.message);
@@ -42,17 +41,14 @@ export default function UserComments() {
   
   const handleDeleteComment = async () => {
     try {
-      // Assuming you have an endpoint to handle deleting a comment
       const res = await axios.delete(`/api/comment/deleteComment/${commentToDelete._id}`);
       if (res.status === 200) {
-        // Remove the deleted comment locally
         const updatedComments = comments.filter(comment => comment._id !== commentToDelete._id);
         setComments(updatedComments);
         console.log('Comment deleted successfully');
       } else {
         console.error('Failed to delete comment');
       }
-      // Close the delete modal after deleting
       setShowDeleteModal(false);
     } catch (error) {
       console.error('Error deleting comment:', error.message);
@@ -94,61 +90,54 @@ export default function UserComments() {
             <h1 className='text-center p-2'>Your Comments</h1>
           </div>
           <div className='overflow-x-auto'>
-  <Table hoverable>
-    <Table.Head>
-      <Table.HeadCell>Comment Content</Table.HeadCell>
-      <Table.HeadCell>Number of Likes</Table.HeadCell>
-      <Table.HeadCell>Post Title</Table.HeadCell> {/* Corrected to display post title */}
-      <Table.HeadCell>Created At</Table.HeadCell> {/* Updated label */}
-      <Table.HeadCell>Updated At</Table.HeadCell> {/* Updated label */}
-      <Table.HeadCell>Update</Table.HeadCell>
-      <Table.HeadCell>Delete</Table.HeadCell>
-    </Table.Head>
-    <Table.Body>
-      {comments && comments.map((comment) => (
-        <Table.Row key={comment._id} className='divide-y'>
-          <Table.Cell>
-            <p className='line-clamp-2'>{comment.content}</p>
-          </Table.Cell>
-          <Table.Cell>
-            <p className='line-clamp-2'>{comment.numberOfLikes}</p>
-          </Table.Cell>
-          <Table.Cell>
-            <p className='line-clamp-2'>{comment.postId.title}</p>
-          </Table.Cell>
-          <Table.Cell>
-            <p className='line-clamp-10'>{comment.createdAt.split("T").join("\n").split("+")[0]}</p>
-          </Table.Cell>
-          <Table.Cell>
-            <p className='line-clamp-2'>{comment.updatedAt.split("T").join("\n").split("+")[0]}</p>
-          </Table.Cell>
-          <Table.Cell>
-            <span
-              onClick={() => {
-                setCommentToEdit(comment);
-                setEditedCommentContent(comment.content); // Set initial content
-                setShowEditModal(true);
-              }}
-              className='text-teal-500 hover:underline'
-              >
-              Update
-            </span>
-          </Table.Cell>
-          <Table.Cell>
-            <span
-              onClick={() => {
-                setCommentToDelete(comment);
-                setShowDeleteModal(true);
-              }}
-              className='font-medium text-red-500 hover:underline cursor-pointer'
-              >
-              Delete
-            </span>
-          </Table.Cell>
-        </Table.Row>
-      ))}
-    </Table.Body>
-  </Table>
+          <Table.Body>
+  {comments && comments.map((comment) => (
+    <Table.Row key={comment._id} className='divide-y'>
+      <Table.Cell>
+        <p className='line-clamp-2'>{comment.content}</p>
+      </Table.Cell>
+      <Table.Cell>
+        <p className='line-clamp-2'>{comment.numberOfLikes}</p>
+      </Table.Cell>
+      <Table.Cell>
+        {comment.postId.title}
+        </Table.Cell>
+        <Table.Cell>
+        {comment.userId.username}
+        </Table.Cell>
+      <Table.Cell>
+        <p className='line-clamp-10'>{comment.createdAt.split("T").join("\n").split("+")[0]}</p>
+      </Table.Cell>
+      <Table.Cell>
+        <p className='line-clamp-2'>{comment.updatedAt.split("T").join("\n").split("+")[0]}</p>
+      </Table.Cell>
+      <Table.Cell>
+        <span
+          onClick={() => {
+            setCommentToEdit(comment);
+            setEditedCommentContent(comment.content); // Set initial content
+            setShowEditModal(true);
+          }}
+          className='text-teal-500 hover:underline'
+        >
+          Update
+        </span>
+      </Table.Cell>
+      <Table.Cell>
+        <span
+          onClick={() => {
+            setCommentToDelete(comment);
+            setShowDeleteModal(true);
+          }}
+          className='font-medium text-red-500 hover:underline cursor-pointer'
+        >
+          Delete
+        </span>
+      </Table.Cell>
+    </Table.Row>
+  ))}
+</Table.Body>
+
 </div>
 
         </div>
