@@ -24,7 +24,8 @@ import ContactComponent from './pages/ContactUs/ContactComponent';
 import Aboutus from './pages/AboutUs/Aboutus'
 import FAQ from './pages/FAQ/FAQ'
 import Home from './pages/home/Home';
-import PolicyComponent from './pages/policy/PolicyComponent'
+import PolicyComponent from './pages/policy/PolicyComponent';
+import GethelpComponent from'./pages/help/GethelpComponent';
 
 export default function App() {
   return (
@@ -47,6 +48,7 @@ export default function App() {
         <Route path='/cabinet' element={<Cabinet/>} />
         <Route path='/aboutUs' element={<Aboutus/>} />
         <Route path='/search' element={<Search />} />
+        <Route path='/help' element={<GethelpComponent/>} />
         <Route element={<PrivateRoute />}>
           <Route path='/dashboard' element={<Dashboard />} />
         </Route>

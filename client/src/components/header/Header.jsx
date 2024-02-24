@@ -8,7 +8,6 @@ import axios from 'axios';
 import { encodeBase64 } from 'bcryptjs';
 import Dropdownn from './Dropdownn';
 import './Header.css'
-import Dropcabin from './Dropcabin';
 
 export default function Header() {
   const path = useLocation().pathname;
