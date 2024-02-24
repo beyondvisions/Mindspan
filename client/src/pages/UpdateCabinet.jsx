@@ -197,6 +197,7 @@ export default function UpdateCabinet() {
         <Editor
           value={formData.description || ''}
           onChange={(value) => setFormData((prevData) => ({ ...prevData, description: value }))}
+          maxLength ='100'
         />
         <Button type='submit'
          style={{

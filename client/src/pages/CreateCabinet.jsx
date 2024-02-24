@@ -175,6 +175,7 @@ export default function CreateCabinet() {
         <Editor
           value={formData.description}
           onChange={(value) => setFormData({ ...formData, description: value })}
+          maxLength ='100'
         />
         <Button type='submit'               
          style={{

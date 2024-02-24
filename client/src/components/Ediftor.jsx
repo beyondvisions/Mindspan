@@ -1,30 +1,39 @@
-import React, { useCallback, useMemo, useRef } from "react";
+import React, { useCallback, useMemo, useRef, useState, useEffect } from "react";
 import QuillEditor from "react-quill";
 import "react-quill/dist/quill.snow.css";
 
-const Editor = ({ value, onChange }) => {
+const Editor = ({ value, onChange, maxLength }) => {
   const quill = useRef();
+  const [contentLength, setContentLength] = useState(0);
 
-  const imageHandler = useCallback(() => {
-    const input = document.createElement("input");
-    input.setAttribute("type", "file");
-    input.setAttribute("accept", "image/*");
-    input.click();
+  useEffect(() => {
+    if (value) {
+      const text = quill.current?.getEditor().getText().trim(); 
+      setContentLength(text.length);
+    } else {
+      setContentLength(0);
+    }
+  }, [value]);
 
-    input.onchange = () => {
-      const file = input.files[0];
-      const reader = new FileReader();
+  const handleTextChange = useCallback((delta, old, source) => {
+    const quillInstance = quill.current.getEditor();
+    if (maxLength && quillInstance.getLength() > maxLength) {
+      const excess = quillInstance.getLength() - maxLength;
+      quillInstance.deleteText(maxLength, excess);
+    }
+  }, [maxLength]);
+  
 
-      reader.onload = () => {
-        const imageUrl = reader.result;
-        const quillEditor = quill.current.getEditor();
-        const range = quillEditor.getSelection(true);
-        quillEditor.insertEmbed(range.index, "image", imageUrl, "user");
-      };
+  useEffect(() => {
+    if (!quill.current) return;
 
-      reader.readAsDataURL(file);
+    const quillInstance = quill.current.getEditor();
+    quillInstance.on('text-change', handleTextChange);
+
+    return () => {
+      quillInstance.off('text-change', handleTextChange);
     };
-  }, []);
+  }, [handleTextChange]);
 
   const modules = useMemo(
     () => ({
@@ -42,46 +51,27 @@ const Editor = ({ value, onChange }) => {
           ["link", "image"],
           ["clean"],
         ],
-        handlers: {
-          image: imageHandler,
-        },
       },
       clipboard: {
         matchVisual: true,
       },
     }),
-    [imageHandler]
+    []
   );
-
-  const formats = [
-    "header",
-    "bold",
-    "italic",
-    "underline",
-    "strike",
-    "blockquote",
-    "list",
-    "bullet",
-    "indent",
-    "link",
-    "image",
-    "color",
-    "clean",
-  ];
+  console.log(value)
 
   return (
     <div>
-
       <QuillEditor
         ref={(el) => (quill.current = el)}
         theme="snow"
         value={value}
-        formats={formats}
         modules={modules}
         onChange={onChange}
         style={{ height: '200px' }}
       />
-    </div>
+<p>le nombre de caractere ecrit est {contentLength}</p><p> le nombre maximale est{maxLength} est caractere</p> 
+   </div>
   );
 };
 
