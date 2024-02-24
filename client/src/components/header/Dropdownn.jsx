@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Dropdown.css';
+import { Link } from 'react-router-dom';
 
 const Dropdownn = ({ categories, lab, lab1, lab2, lab3 }) => {
   const [activeDropdown, setActiveDropdown] = useState(null);
@@ -66,6 +67,18 @@ const Dropdownn = ({ categories, lab, lab1, lab2, lab3 }) => {
       .filter((category) => category.catego.toLowerCase() === activeDropdown)
       .slice(0, numVisibleItems);
   }
+  let selectedLabel="/Evenement?searchTerm=&sort=desc&category=événements&subcategory=";
+
+  if (activeDropdown === 'événements') {
+    selectedLabel = "/Evenement?searchTerm=&sort=desc&category=événements&subcategory=";
+  } else if (activeDropdown === 'santé et mentale') {
+    selectedLabel = "/MentalHelath?searchTerm=&sort=desc&category=événements&subcategory=";
+  } else if (activeDropdown === 'parent et enfants') {
+    selectedLabel = "/ParentEtEnfant?searchTerm=&sort=desc&category=événements&subcategory=";
+  } else if (activeDropdown === 'Cabinet') {
+    selectedLabel = "/cabinet?adresse=";
+  } 
+  console.log(`${selectedLabel}`);
 
   return (
     <div className='containerdropdown'
@@ -73,32 +86,39 @@ const Dropdownn = ({ categories, lab, lab1, lab2, lab3 }) => {
     >
       <div className='containerdropdowncateg'>
         {lab && (
+          <Link to="/Evenement">
           <span
             onMouseEnter={() => handleHover(lab)}
           >
             {lab}
           </span>
+          </Link>
         )}
         {lab1 && (
+          <Link to="/ParentEtEnfant">
           <span
             onMouseEnter={() => handleHover(lab1)}
           >
             {lab1}
           </span>
+          </Link>
         )}
         {lab2 && (
+          <Link to="MentalHelath">
           <span
             onMouseEnter={() => handleHover(lab2)}
           >
             {lab2}
           </span>
+          </Link>
         )}
-        
+        <Link to="/cabinet">
         <span
           onMouseEnter={() => handleHover(lab3)}
         >
           {lab3}
         </span>
+        </Link>
       </div>
       <div
         className={`containerdropdownsubcateg ${
@@ -107,10 +127,15 @@ const Dropdownn = ({ categories, lab, lab1, lab2, lab3 }) => {
       >
         <div className='containerulcateg'>
           <ul>
-            {filteredCategories.map((category, index) => (
-              <li key={index}>{category.name}</li>
-            ))}
-            {categories.length > numVisibleItems && <li>see more</li>}
+          {filteredCategories.map((category, index) => (
+  <Link to={`${selectedLabel}${category.name.replace(/ /g, '+')}`} key={index}>
+    <li>{category.name}</li>
+  </Link>
+))}
+            {categories.length > numVisibleItems && 
+            <Link to={`${selectedLabel}`} >
+            <li>see more</li>
+            </Link>}
           </ul>
         </div>
       </div>

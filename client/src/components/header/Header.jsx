@@ -87,24 +87,22 @@ useEffect(() => {
     </button>
   </div>
 </form>
-
-
-
-     
-     
         <Navbar.Toggle />
       <Navbar.Collapse>
-        <Navbar.Link active={path === '/'} as={'div'} style={{ color: path === '/' ? '#D294BB' : 'initial' }}>
+        <Navbar.Link active={path === '/'} as={'div'} style={{ color: path === '/' ? '#D294BB' : 'initial',backgroundColor: path === '/' ? 'initial' : 'initial' }}>
           <Link to='/'>Home</Link>
         </Navbar.Link>
-        <Navbar.Link active={path === '/AboutUs'} as={'div'} style={{ color: path === '/AboutUs' ? '#D294BB' : 'initial' }}>
+        <Navbar.Link active={path === '/AboutUs'} as={'div'} style={{ color: path === '/AboutUs' ? '#D294BB' : 'initial',backgroundColor: path === '/' ? 'initial' : 'initial' }}>
           <Link to='/AboutUs'>About</Link>
         </Navbar.Link>
-        <Navbar.Link active={path === '/projects'} as={'div'} style={{ color: path === '/search' ? '#D294BB' : 'initial' }}>
+        <Navbar.Link active={path === '/projects'} as={'div'} style={{ color: path === '/search' ? '#D294BB' : 'initial',backgroundColor: path === '/' ? 'initial' : 'initial' }}>
           <Link to='/search'>Posts</Link>
         </Navbar.Link>
-        <Navbar.Link active={path === '/contact'} as={'div'} style={{ color: path === '/contact' ? '#D294BB' : 'initial' }}>
+        <Navbar.Link active={path === '/contact'} as={'div'} style={{ color: path === '/contact' ? '#D294BB' : 'initial',backgroundColor: path === '/' ? 'initial' : 'initial' }}>
           <Link to='/contact'>Contact Us</Link>
+        </Navbar.Link>
+        <Navbar.Link active={path === '/FAQ'} as={'div'} style={{ color: path === '/FAQ' ? '#D294BB' : 'initial' ,backgroundColor: path === '/' ? 'initial' : 'initial'}}>
+          <Link to='/FAQ'>FAQ</Link>
         </Navbar.Link>
        
       </Navbar.Collapse>

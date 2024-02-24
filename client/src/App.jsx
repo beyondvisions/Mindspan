@@ -45,6 +45,7 @@ export default function App() {
         <Route path='/cabinet' element={<Cabinet/>} />
         <Route path='/aboutUs' element={<Aboutus/>} />
         <Route path='/search' element={<Search />} />
+        <Route path="*" element={<Search/>} />
         <Route element={<PrivateRoute />}>
           <Route path='/dashboard' element={<Dashboard />} />
         </Route>
