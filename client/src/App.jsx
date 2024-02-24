@@ -1,5 +1,4 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import About from './pages/About';
 import Dashboard from './pages/Dashboard';
 import SignUp from './pages/SignUp';
 import SignIn from './pages/SignIn';
@@ -24,8 +23,7 @@ import ContactComponent from './pages/ContactUs/ContactComponent';
 import Aboutus from './pages/AboutUs/Aboutus'
 import FAQ from './pages/FAQ/FAQ'
 import Home from './pages/home/Home';
-import PolicyComponent from './pages/policy/PolicyComponent';
-import GethelpComponent from'./pages/help/GethelpComponent';
+import PolicyComponent from './pages/policy/PolicyComponent'
 
 export default function App() {
   return (
@@ -34,7 +32,6 @@ export default function App() {
       <Header />
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/about' element={<About />} />
         <Route path='/sign-up' element={<SignUp />} />
         <Route path='/sign-in' element={<SignIn/>} />
         <Route path='/verify' element={<VerificationPage/>} />
@@ -48,7 +45,6 @@ export default function App() {
         <Route path='/cabinet' element={<Cabinet/>} />
         <Route path='/aboutUs' element={<Aboutus/>} />
         <Route path='/search' element={<Search />} />
-        <Route path='/help' element={<GethelpComponent/>} />
         <Route element={<PrivateRoute />}>
           <Route path='/dashboard' element={<Dashboard />} />
         </Route>

@@ -110,7 +110,6 @@ export const getcomments = async (req, res, next) => {
       .sort({ createdAt: sortDirection })
       .skip(startIndex)
       .limit(limit)
-      .populate('postId','title').populate('userId',"username")
       ;
     const totalComments = await Comment.countDocuments();
     const now = new Date();
@@ -124,6 +123,7 @@ export const getcomments = async (req, res, next) => {
     });
     res.status(200).json({ comments, totalComments, lastMonthComments });
   } catch (error) {
+    console.error('Error in getcomments:', error);
     next(error);
   }
 };
@@ -169,7 +169,7 @@ export const getusercomments = async (req, res, next) => {
 export const getUserComments = async (req, res) => {
   try {
     const userId = req.params.userId;
-    const comments = await Comment.find({ userId }).populate('postId');
+    const comments = await Comment.find({ userId });
     res.status(200).json(comments);
   } catch (error) {
     console.error(error);

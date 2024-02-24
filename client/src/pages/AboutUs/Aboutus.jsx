@@ -2,7 +2,6 @@ import React, {useState} from 'react'
 import './Aboutus.css'
 import { IonIcon } from '@ionic/react';
 import { chevronForwardOutline,chevronBackOutline } from 'ionicons/icons';
-import RecentPost from '../RecentPost';
 const Aboutus = () => {
     const [datacustomer,setDatacustomer]=useState([
         {
@@ -77,7 +76,6 @@ const Aboutus = () => {
             ))}
             <div className='arroww' ><IonIcon icon={chevronForwardOutline} className='iconcart' onClick={nextSlide}/></div>
         </div>
-        <RecentPost category="Santé+et+Mentale"  />
     </div>
   )
 }
