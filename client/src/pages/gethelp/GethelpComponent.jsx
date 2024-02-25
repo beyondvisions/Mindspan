@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Select } from 'flowbite-react';
 
 import styles from './GethelpComponent.module.css';
 
@@ -51,7 +52,10 @@ export default function GethelpComponent() {
                         <div className={styles.para}>Where Are You Based?</div>
                         <div className={styles.box}>
                             <div className={styles.input_container}>
-                                <select onChange={handleSelect}>
+                                <Select onChange={handleSelect}
+                                              class="block w-full border disabled:cursor-not-allowed disabled:opacity-50 bg-gray-50 border-gray-300 text-gray-900 focus:border-custom-color focus:ring-custom-color dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-custom-color dark:focus:ring-custom-color p-2.5 text-sm rounded-lg"
+
+                                >
                                     <option value="">All</option> {/* Default option for all */}
                                     {[...new Set(options.map(option => option.location))].map((location, index) => (
                                         <option key={index} value={location}>
@@ -59,7 +63,7 @@ export default function GethelpComponent() {
                                         </option>
                                     ))}
 
-                                </select>
+                                </Select>
                             </div>
                         </div>
                     </div>
@@ -67,7 +71,10 @@ export default function GethelpComponent() {
                         <div className={styles.parag}>How Can I Help You?</div>
                         <div className={styles.box}>
                             <div className={styles.input_container}>
-                                <select onChange={handleSelect1}>
+                                <Select onChange={handleSelect1}
+                                              class="block w-full border disabled:cursor-not-allowed disabled:opacity-50 bg-gray-50 border-gray-300 text-gray-900 focus:border-custom-color focus:ring-custom-color dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-custom-color dark:focus:ring-custom-color p-2.5 text-sm rounded-lg"
+
+                                >
                                     <option value="">All</option> {/* Default option for all */}
                                     {[...new Set(options.map(option => option.howToHelp))].map((howToHelp, index) => (
                                         <option key={index} value={howToHelp}>
@@ -75,7 +82,7 @@ export default function GethelpComponent() {
                                         </option>
                                     ))}
 
-                                </select>
+                                </Select>
                             </div>
                         </div>
                     </div>
@@ -84,11 +91,11 @@ export default function GethelpComponent() {
             </div>
             <div>
                 <div className={styles.sectiongethelp}>
-                    <h1 className={styles.title}>Emergency Helpline Numbers</h1>
-
+                <div>
+                <h3 className={styles.title}>Emergency Helpline Numbers</h3>
+            </div>
                     <ul className={styles.linksgethelp}>
                         {value !== '' || value1 !== '' ? (
-                            // Display filtered options if either location or howToHelp is selected
                             (() => {
                                 const filteredOptions = options
                                     .filter(option =>
@@ -96,7 +103,6 @@ export default function GethelpComponent() {
                                         (value1 === '' || option.howToHelp === value1)
                                     );
 
-                                // Check if all locations are USA
                                 const allLocationsAreUSA = filteredOptions.every(option => option.location === 'USA');
 
                                 return allLocationsAreUSA ? (

@@ -40,6 +40,12 @@ div h3.title {
     .subscribe__title {
         height: auto;
     }
+    
+.subscribe {
+ 
+    max-width: 400px;
+   
+}
 }
 
 .subscribe__copy {
@@ -51,11 +57,9 @@ div h3.title {
 
 
 .container {
-    margin: 10px;
-    padding: 0;
     box-sizing: border-box;
     border-radius: 10px;
-    width: 100vw;
+    width: 80vw;
     height: 50vh;
     display: flex;
     align-items: center;
@@ -65,7 +69,24 @@ div h3.title {
 
 @media (max-width: 600px) {
     .container {
-        height: auto;
+        height: 350px;
+    }
+    .subscribe {
+  
+        max-width: 400px;
+       
+    }
+}
+
+@media (max-width: 500px) {
+    .container {
+        width: 300px;
+
+    }
+    .subscribe {
+  
+        max-width: 300px;
+       
     }
 }
 
@@ -73,7 +94,7 @@ div h3.title {
     width: 250px;
     text-align: left;
     margin-bottom: 10px;
-    margin-top: 20px;
+    margin-top: 10px;
     font-size: 20px;
     color: #873260;
 }
@@ -82,7 +103,7 @@ div h3.title {
     width: 250px;
     text-align: left;
     margin-bottom: 10px;
-    margin-top: 50px;
+    margin-top: 20px;
     font-size: 20px;
     color: #873260;
 }
@@ -103,7 +124,6 @@ div h3.title {
 }
 
 .box select {
-    background-image:none;
 
     background-color: #873260;
     border-radius: 10px;
@@ -115,14 +135,10 @@ div h3.title {
 
     font-size: 20px;
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
-    -webkit-appearance: button;
-    appearance: button;
+ 
     outline: none;
 }
-select:not([size]) {
-    background-image: none
 
-}
 ._box_i40r8_179 select {
     background-image: none;
     background-color: #873260;
