@@ -47,6 +47,14 @@ export const getposts = async (req, res, next) => {
       .sort({ updatedAt: sortDirection })
       .skip(startIndex)
       .limit(limit);
+      const postsByCategory = await Post.aggregate([
+        {
+            $group: {
+                _id: '$category', // Group by category field
+                totalPosts: { $sum: 1 } // Count number of documents in each category
+            }
+        }
+    ]);
 
     const totalPosts = await Post.countDocuments();
 
@@ -58,6 +66,7 @@ export const getposts = async (req, res, next) => {
       posts,
       totalPosts,
       lastMonthPosts,
+      postsByCategory,
     });
   } catch (error) {
     next(error);

@@ -18,6 +18,7 @@ export default function Evenement() {
   const [subcategories, setSubcategories] = useState([]);
   const [clickedFilterIndex, setClickedFilterIndex] = useState(null);
   const [adresse, setAdresse] = useState([]); // Assuming 'adresse' is your array of subcategories
+  const [totalposts, settotalPosts] = useState(0);
 
   const location = useLocation();
   const navigate = useNavigate();
@@ -46,6 +47,8 @@ export default function Evenement() {
           const data = res.data;
           setPosts(data.posts);
           setShowMore(data.posts.length === 9);
+          settotalPosts(data.postsByCategory.find(postsByCategory => postsByCategory._id === "Parent et enfants")?.totalPosts ?? 0);
+
         }
       } catch (error) {
         console.error('Error fetching posts:', error);
@@ -124,7 +127,7 @@ console.log(sidebarData.category);
       <div className='intropageinfocontainer'>
                 <div className='intropagearticle'>
                     <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
-                        <h1 style={{ fontSize: '1.5rem'}}><b style={{ color: 'black' }}>Mind</b>span</h1>
+                        <h1 style={{ fontSize: '1.5rem'}}><b style={{ color: 'black' }}>Parent et enfant</b></h1>
                         <br />
                         <p>
                             "Prioritizing mental health means acknowledging its profound impact on our lives. Seeking guidance from mental health consultants empowers us to navigate challenges and cultivate resilience."
@@ -133,7 +136,7 @@ console.log(sidebarData.category);
                     <div className='cardintro'>
                         <div className='cardintrocontenu'>
                             <img src='https://firebasestorage.googleapis.com/v0/b/psychwave-19b6f.appspot.com/o/1708530802270consultation.png?alt=media&token=89e16a69-4cdb-4267-bfff-809cc9fba593' alt='Consultation' />
-                            <h3><b>We offer specialists all over Tunisia.</b></h3>
+                            <h3><b>We offer {totalposts} article for .</b></h3>
                         </div>
                     </div>
                 </div>

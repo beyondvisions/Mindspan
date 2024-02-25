@@ -13,11 +13,13 @@ export default function Evenement() {
   });
 
   const [posts, setPosts] = useState([]);
+  const [totalposts, settotalPosts] = useState(0);
+
   const [loading, setLoading] = useState(false);
   const [showMore, setShowMore] = useState(false);
   const [subcategories, setSubcategories] = useState([]);
   const [clickedFilterIndex, setClickedFilterIndex] = useState(null);
-  const [adresse, setAdresse] = useState([]); // Assuming 'adresse' is your array of subcategories
+  const [adresse, setAdresse] = useState([]); 
 
   const location = useLocation();
   const navigate = useNavigate();
@@ -45,6 +47,8 @@ export default function Evenement() {
         if (res.status === 200) {
           const data = res.data;
           setPosts(data.posts);
+          settotalPosts(data.postsByCategory.find(postsByCategory => postsByCategory._id === "Santé et Mentale")?.totalPosts ?? 0);
+         
           setShowMore(data.posts.length === 9);
         }
       } catch (error) {
@@ -119,21 +123,22 @@ export default function Evenement() {
       }
     }
   }, [location.search, adresse]);
+  console.log(totalposts.toString() );
   return (
     <div >
       <div className='intropageinfocontainer'>
                 <div className='intropagearticle'>
                     <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
-                        <h1 style={{ fontSize: '1.5rem'}}><b style={{ color: 'black' }}>Mind</b>span</h1>
+                        <h1 style={{ fontSize: '1.5rem'}}><b style={{ color: 'black' }}>Santé mental</b></h1>
                         <br />
                         <p>
-                            "Prioritizing mental health means acknowledging its profound impact on our lives. Seeking guidance from mental health consultants empowers us to navigate challenges and cultivate resilience."
+                            "Prioritizing mental health means acknowledging  its profound impact on our lives. Seeking guidance from mental health consultants empowers us to navigate challenges and cultivate resilience."
                         </p>
                     </div>
                     <div className='cardintro'>
                         <div className='cardintrocontenu'>
                             <img src='https://firebasestorage.googleapis.com/v0/b/psychwave-19b6f.appspot.com/o/1708530802270consultation.png?alt=media&token=89e16a69-4cdb-4267-bfff-809cc9fba593' alt='Consultation' />
-                            <h3><b>We offer specialists all over Tunisia.</b></h3>
+                            <h3><b>We offer {totalposts} article for mental helth.</b></h3>
                         </div>
                     </div>
                 </div>

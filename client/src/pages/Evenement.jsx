@@ -11,7 +11,7 @@ export default function Evenement() {
     category: 'événements',
     subcategory: '',
   });
-
+  const [totalposts, settotalPosts] = useState(0);
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [showMore, setShowMore] = useState(false);
@@ -44,6 +44,7 @@ export default function Evenement() {
         if (res.status === 200) {
           const data = res.data;
           setPosts(data.posts);
+          settotalPosts(data.postsByCategory.find(postsByCategory => postsByCategory._id === "événements")?.totalPosts ?? 0);
           setShowMore(data.posts.length === 9);
         }
       } catch (error) {
@@ -128,7 +129,7 @@ export default function Evenement() {
       <div className='intropageinfocontainer'>
                 <div className='intropagearticle'>
                     <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
-                        <h1 style={{ fontSize: '1.5rem'}}><b style={{ color: 'black' }}>Mind</b>span</h1>
+                        <h1 style={{ fontSize: '1.5rem'}}><b style={{ color: 'black' }}>Evenement</b></h1>
                         <br />
                         <p>
                             "Prioritizing mental health means acknowledging its profound impact on our lives. Seeking guidance from mental health consultants empowers us to navigate challenges and cultivate resilience."
@@ -137,7 +138,7 @@ export default function Evenement() {
                     <div className='cardintro'>
                         <div className='cardintrocontenu'>
                             <img src='https://firebasestorage.googleapis.com/v0/b/psychwave-19b6f.appspot.com/o/1708530802270consultation.png?alt=media&token=89e16a69-4cdb-4267-bfff-809cc9fba593' alt='Consultation' />
-                            <h3><b>We offer specialists all over Tunisia.</b></h3>
+                            <h3><b>We offer {totalposts} article for evenets.</b></h3>
                         </div>
                     </div>
                 </div>
