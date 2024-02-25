@@ -15,7 +15,7 @@ const Wronpath = () => {
                   <Link to='/'>
                     <div className='butearth'><h3>get back to the earth</h3></div>
                     </Link>
-                    <Link to ='/'>
+                    <Link to ='/GetHelp'>
                     <div className='butearth'><h3>Get help</h3></div>
                     </Link> 
                 </div>
