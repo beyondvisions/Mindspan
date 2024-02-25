@@ -120,7 +120,7 @@ div h3.title {
 .congetget {
     display: flex;
     align-items: center;
-    justify-content: end;
+    justify-content: flex-end;
     padding: 0 30px;
 }
 .respp {
