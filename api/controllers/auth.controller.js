@@ -40,7 +40,7 @@ export const signup = async (req, res, next) => {
     const verificationToken = jwt.sign(
       { userId: newUser._id },
       process.env.JWT_SECRET,
-      { expiresIn: '1m' } // Adjust as needed
+      { expiresIn: '2d' } // Adjust as needed
     );
 
    
