@@ -50,8 +50,8 @@ export const getposts = async (req, res, next) => {
       const postsByCategory = await Post.aggregate([
         {
             $group: {
-                _id: '$category', // Group by category field
-                totalPosts: { $sum: 1 } // Count number of documents in each category
+                _id: '$category', 
+                totalPosts: { $sum: 1 } 
             }
         }
     ]);

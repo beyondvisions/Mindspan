@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react'
-import CardComponent from './card/CardComponent.jsx'
+import { Button} from 'flowbite-react';
+
 import styles from './HomeComponent.module.css'
 import { FaHeart } from 'react-icons/fa';
 import { FaStreetView } from "react-icons/fa";
@@ -12,9 +13,10 @@ import AudioPlayer from '../../components/musicplayer/AudioPLayer.jsx';
 import audioFile from "./scp.mp3";
 
 export default function Home() {
-    const [clickedFilterIndex, setClickedFilterIndex] = useState(0);
+  const [clickedFilterIndex, setClickedFilterIndex] = useState();
   const [newsletters, setNewsletters] = useState([]);
   const [newSubscriberEmail, setNewSubscriberEmail] = useState('');
+  
 const handleAddSubscriber = async () => {
     try {
       const res = await axios.post('/api/newsletters/emails/add', { email: newSubscriberEmail });
@@ -28,8 +30,25 @@ const handleAddSubscriber = async () => {
       alert('Failed to subscribe. Please try again later.');
     }
   };
-  
-  
+  //get all post 
+  const [totalPosts, setTotalPosts] = useState(0);
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      try {
+        const res = await fetch('/api/post/getposts');
+        const data = await res.json();
+        if (res.ok) {
+          setTotalPosts(data.totalPosts);
+          console.log(data.totalPosts);
+        }
+      } catch (error) {
+        console.log(error.message);
+      }
+    };
+
+
+  }, []);
 
   //get categories
   const [categories, setCategories] = useState([]);
@@ -47,7 +66,7 @@ const handleAddSubscriber = async () => {
       }
     };
     fetchCategories();
-  }, []);
+  }, );
   const handleClick = (index) => {
     setClickedFilterIndex(index);
 };
@@ -74,16 +93,9 @@ const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
 useEffect(() => {
     const interval = setInterval(() => {
         setCurrentTitleIndex((prevIndex) => (prevIndex + 1) % titles.length);
-    }, 8000);
+    }, 4000);
     return () => clearInterval(interval);
 }, [titles]);
-
-
-
-
-
-
-
 
   return (
     <div>
@@ -95,8 +107,14 @@ useEffect(() => {
                     <div key={index} className={styles.hero_content_area}>
                            <h1>{titles[currentTitleIndex].titre}</h1>
                         <h3>{titles[currentTitleIndex].description}</h3>
-                        <Link to='./search'><a href="#" className={styles.btn}>Discover More</a>   </Link>
-                    </div>
+                        <Link to='/'>
+            <Button  style={{ backgroundColor: '#D294BB' }} 
+                          className="focus:border-custom-color focus:ring-custom-color dark:focus:border-custom-color dark:focus:ring-custom-color"
+
+            >
+              Discover More
+            </Button>
+          </Link>                    </div>
                      ))}
 
                 </div>
@@ -113,17 +131,26 @@ useEffect(() => {
                 <p className={styles.respp} >Dedicated to your well-being, our mission is to provide you with the knowledge and tools essential for fortifying your mental health.
                     We are committed to empowering you with valuable insights and capabilities,</p>
 
-                <div className={styles.congetget}><Link to='./AboutUs'><div className={styles.congetgetpro}><span>Get started</span></div></Link></div>
+                <div className={styles.congetget}>
+                <Link to='/'>
+            <Button  style={{ backgroundColor: '#D294BB' }} 
+                          className="focus:border-custom-color focus:ring-custom-color dark:focus:border-custom-color dark:focus:ring-custom-color"
+
+            >
+              Get started
+            </Button>
+          </Link>
+                </div>
             </div>
             </div>
          <div className={styles.containcomptourpromax}>
          <div className={styles.containcomptour}>
               <div className={styles.titcomptour}>
-                <h1>Empowering you with our<Link to='./cabinet'><span className={styles.terapist}> therapists </span></Link>throught <span className={styles.mheal}> mental health </span>awarness</h1>
+                <h1>Empowering you with our<Link to='/cabinet'><span className={styles.terapist}> therapists </span></Link>throught <span className={styles.mheal}> mental health </span>awarness</h1>
                 <p>We are in a mission to provide comprhensivemental health support. our passionate team ofprofessionals is dedicated to fostering your well-being and mental health..</p>
               </div> 
               <div className={styles.containlescomptour}>
-                <div className={styles.comptourwahda}><img src='expertise.png'></img><span >3000+</span><p>articles</p></div>
+                <div className={styles.comptourwahda}><img src='expertise.png'></img><span >{totalPosts}</span><p>Catégories</p></div>
                 <div className={styles.comptourwahda} ><img src='expertise.png'></img><span>3000+</span><p>articles</p></div>
                 <div className={styles.comptourwahda}><img src='expertise.png'></img><span>3000+</span><p>articles</p></div>
               </div>
