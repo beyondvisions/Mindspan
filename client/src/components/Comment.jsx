@@ -102,7 +102,8 @@ export default function Comment({ comment, onLike, onEdit, onDelete }) {
           </>
         ) : (
           <>
-            <p className='text-gray-500 pb-2'>{comment.content}</p>
+          <div style={{ display: 'flex', flexWrap: 'wrap',width:'100%',height:'auto' }}>
+<p className='text-gray-500 pb-2 ' style={{ wordBreak: 'break-all' }} >{comment.content}</p></div>
             <div className='flex items-center pt-2 text-xs border-t dark:border-gray-700 max-w-fit gap-2'>
               <button
                 type='button'
