@@ -1,6 +1,4 @@
 import { useRef, useState } from 'react'
-import { Button} from 'flowbite-react';
-
 import styles from './HomeComponent.module.css'
 import { FaHeart } from 'react-icons/fa';
 import { FaStreetView } from "react-icons/fa";
@@ -9,14 +7,14 @@ import { FaExchangeAlt } from 'react-icons/fa';
 import axios from 'axios';
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import AudioPlayer from '../../components/musicplayer/AudioPLayer.jsx';
-import audioFile from "./scp.mp3";
-
+import AudioPlayer from '../../components/musicplayer/AudioPLayer';
+import aud from './scp.mp3'
+import { Button } from 'flowbite-react';
+import RecentPost from '../RecentPost';
 export default function Home() {
-  const [clickedFilterIndex, setClickedFilterIndex] = useState();
+    const [clickedFilterIndex, setClickedFilterIndex] = useState(0);
   const [newsletters, setNewsletters] = useState([]);
   const [newSubscriberEmail, setNewSubscriberEmail] = useState('');
-  
 const handleAddSubscriber = async () => {
     try {
       const res = await axios.post('/api/newsletters/emails/add', { email: newSubscriberEmail });
@@ -30,25 +28,8 @@ const handleAddSubscriber = async () => {
       alert('Failed to subscribe. Please try again later.');
     }
   };
-  //get all post 
-  const [totalPosts, setTotalPosts] = useState(0);
-
-  useEffect(() => {
-    const fetchPosts = async () => {
-      try {
-        const res = await fetch('/api/post/getposts');
-        const data = await res.json();
-        if (res.ok) {
-          setTotalPosts(data.totalPosts);
-          console.log(data.totalPosts);
-        }
-      } catch (error) {
-        console.log(error.message);
-      }
-    };
-
-
-  }, []);
+  
+  
 
   //get categories
   const [categories, setCategories] = useState([]);
@@ -66,7 +47,7 @@ const handleAddSubscriber = async () => {
       }
     };
     fetchCategories();
-  }, );
+  }, []);
   const handleClick = (index) => {
     setClickedFilterIndex(index);
 };
@@ -96,6 +77,60 @@ useEffect(() => {
     }, 4000);
     return () => clearInterval(interval);
 }, [titles]);
+const [totalPosts, setTotalPosts] = useState(0);
+const [totalCategories, setTotalCategories] = useState(0);
+const [totalCabinets,setTotalCabinets] = useState(0);
+
+useEffect(() => {
+  const fetchPosts = async () => {
+    try {
+      const res = await axios.get(`/api/post/getposts?`);
+      if (res.status === 200) {
+        const data = res.data;
+        setTotalPosts(data.totalPosts);
+      }
+    } catch (error) {
+      console.error('Error fetching posts:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const fetchCategories = async () => {
+    try {
+      const res = await axios.get('/api/categories/getcategories');
+      if (res.status === 200) {
+        setTotalCategories(res.data.length);
+      }
+    } catch (error) {
+      console.error('Error fetching categories:', error);
+    }
+  };
+
+  const fetchCabinets = async () => {
+    try {
+        const res = await axios.get(`/api/cabinet/getCabinets`);
+        if (res.status === 200) {
+            const data = res.data; // Extract data from the response
+            setTotalCabinets(data.totalCabinets); // Set total number of cabinets
+        } else {
+            throw new Error('Failed to fetch data');
+        }
+    } catch (error) {
+        console.error('Error fetching cabinets:', error);
+    }
+};
+
+
+
+
+  fetchCabinets();
+  fetchCategories();
+  fetchPosts();
+}, []);
+console.log(totalCabinets);
+
+
 
   return (
     <div>
@@ -107,13 +142,12 @@ useEffect(() => {
                     <div key={index} className={styles.hero_content_area}>
                            <h1>{titles[currentTitleIndex].titre}</h1>
                         <h3>{titles[currentTitleIndex].description}</h3>
-                        <Link to='/'>
+            <Link to='/search'>
             <Button  style={{ backgroundColor: '#D294BB' }} 
                           className="focus:border-custom-color focus:ring-custom-color dark:focus:border-custom-color dark:focus:ring-custom-color"
 
             >
-              Discover More
-            </Button>
+Discover more            </Button>
           </Link>                    </div>
                      ))}
 
@@ -132,27 +166,26 @@ useEffect(() => {
                     We are committed to empowering you with valuable insights and capabilities,</p>
 
                 <div className={styles.congetget}>
-                <Link to='/'>
+            <Link to='/sign-up'>
             <Button  style={{ backgroundColor: '#D294BB' }} 
                           className="focus:border-custom-color focus:ring-custom-color dark:focus:border-custom-color dark:focus:ring-custom-color"
 
             >
-              Get started
-            </Button>
-          </Link>
-                </div>
+Get started            </Button>
+          </Link>                  </div>
+           
             </div>
             </div>
          <div className={styles.containcomptourpromax}>
          <div className={styles.containcomptour}>
               <div className={styles.titcomptour}>
-                <h1>Empowering you with our<Link to='/cabinet'><span className={styles.terapist}> therapists </span></Link>throught <span className={styles.mheal}> mental health </span>awarness</h1>
+                <h1>Empowering you with our<Link to='./cabinet'><span className={styles.terapist}> therapists </span></Link>throught <Link to='MentalHelath'><span className={styles.mheal}> mental health </span> </Link> awarness</h1>
                 <p>We are in a mission to provide comprhensivemental health support. our passionate team ofprofessionals is dedicated to fostering your well-being and mental health..</p>
               </div> 
               <div className={styles.containlescomptour}>
-                <div className={styles.comptourwahda}><img src='expertise.png'></img><span >{totalPosts}</span><p>Catégories</p></div>
-                <div className={styles.comptourwahda} ><img src='expertise.png'></img><span>3000+</span><p>articles</p></div>
-                <div className={styles.comptourwahda}><img src='expertise.png'></img><span>3000+</span><p>articles</p></div>
+                <div className={styles.comptourwahda}><img src='expertise.png'></img><span >{totalCategories}+</span><p>Catégories</p></div>
+                <div className={styles.comptourwahda} ><img src='expertise.png'></img><span>{totalPosts}+</span><p>Articles</p></div>
+                <div className={styles.comptourwahda}><img src='expertise.png'></img><span>{totalCabinets}+</span><p>articles</p></div>
               </div>
             </div>
          </div>
@@ -312,12 +345,7 @@ useEffect(() => {
                 <h3 className={styles.title}>Featured</h3>
                 <div className={styles.subscribe}>
                     <h2 className={styles.subscribe__title}>Articles</h2>
-                    <p className={styles.subscribe__copy}>El articlouweeet wouuh aleeyaa wouuuuuhhh
-                        El articlouweeet wouuh aleeyaa wouuuuuhhh
-                        El articlouweeet wouuh aleeyaa wouuuuuhhh
-                        El articlouweeet wouuh aleeyaa wouuuuuhhh
-                        El articlouweeet wouuh aleeyaa wouuuuuhhh
-                    </p>
+                   <RecentPost category='événements' subcategory=''/>
                 </div>
             </div>
 
@@ -328,9 +356,7 @@ useEffect(() => {
                     <div className={styles.swiper}>
                        
                         <div className={styles.swiper_wrapper}>
-                        <div className="container">
-      <AudioPlayer audioSrc={audioFile} />
-    </div>
+
 
 
 
@@ -351,7 +377,13 @@ useEffect(() => {
 
 
             </div>
+            <div style={{display:'flex',justifyContent:'space-evenly'}}>
+            <AudioPlayer audioSrc={aud} label="relaxation"/>
+            <AudioPlayer audioSrc={aud} label="relaxation"/>
+            <AudioPlayer audioSrc={aud} label="relaxation"/>
 
+
+            </div>
 
 
             <div>

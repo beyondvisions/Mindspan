@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
-import './AudioPlayer.css'
-function AudioPlayer({ audioSrc }) {
+import './AudioPlayer.css';
+
+function AudioPlayer({ audioSrc,label }) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
@@ -42,15 +43,16 @@ function AudioPlayer({ audioSrc }) {
   }
 
   useEffect(() => {
-    audioRef.current.addEventListener("timeupdate", handleTimeUpdate);
+    const audioElement = audioRef.current;
+    audioElement.addEventListener("timeupdate", handleTimeUpdate);
     return () => {
-      audioRef.current.removeEventListener("timeupdate", handleTimeUpdate);
+      audioElement.removeEventListener("timeupdate", handleTimeUpdate);
     };
   }, []);
 
   return (
     <div className="player-card">
-      <img className='audioplayer'src="cover-image.jpg" alt="Cover Image" />
+      <img className='audioplayer' src="cover-image.jpg" alt="Description of the cover image" />
       <input className="inputmediaplayer"
         type="range"
         min="0"
@@ -60,14 +62,14 @@ function AudioPlayer({ audioSrc }) {
       />
 
       <audio ref={audioRef} src={audioSrc} />
-
+<h2> {label}</h2>
       <div className="track-duration">
         <p>{formatDuration(currentTime)}</p>
         <p>{formatDuration(duration)}</p>
       </div>
 
       <button className='btnmediaplayer' onClick={handlePlayPause}>
-        <span >
+        <span>
           {isPlaying ? "pause" : "play"}
         </span>
       </button>
