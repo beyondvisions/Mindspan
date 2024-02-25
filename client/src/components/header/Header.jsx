@@ -104,6 +104,9 @@ useEffect(() => {
         <Navbar.Link active={path === '/FAQ'} as={'div'} style={{ color: path === '/FAQ' ? '#D294BB' : 'initial' ,backgroundColor: path === '/' ? 'initial' : 'initial'}}>
           <Link to='/FAQ'>FAQ</Link>
         </Navbar.Link>
+        <Navbar.Link active={path === '/GetHelp'} as={'div'} style={{ color: path === '/GetHelp' ? '#D294BB' : 'initial' ,backgroundColor: path === '/' ? 'initial' : 'initial'}}>
+          <Link to='/GetHelp'>Get Help</Link>
+        </Navbar.Link>
        
       </Navbar.Collapse>
       {currentUser ? (
