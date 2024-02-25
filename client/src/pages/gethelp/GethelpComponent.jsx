@@ -83,10 +83,10 @@ export default function GethelpComponent() {
                 </div>
             </div>
             <div>
-                <div className={styles.section}>
-                    <h1>Emergency Helpline Numbers</h1>
+                <div className={styles.sectiongethelp}>
+                    <h1 className={styles.title}>Emergency Helpline Numbers</h1>
 
-                    <ul className={styles.links}>
+                    <ul className={styles.linksgethelp}>
                         {value !== '' || value1 !== '' ? (
                             // Display filtered options if either location or howToHelp is selected
                             (() => {
@@ -122,7 +122,6 @@ export default function GethelpComponent() {
                                 );
                             })()
                         ) : (
-                            // Display all options if no selection is made
                             options.map((option, index) => (
                                 <li key={index}>
                                     <strong>{option.label}</strong>

@@ -35,7 +35,7 @@ export default function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/sign-in' element={<SignIn/>} />
-        <Route path='/sign-un' element={<SignUp/>} />
+        <Route path='/sign-up' element={<SignUp/>} />
         <Route path='/verify' element={<VerificationPage/>} />
         <Route path='/password' element={<Password/>} />
         <Route path='/contact' element={<ContactComponent/>} />
