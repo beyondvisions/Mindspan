@@ -35,6 +35,29 @@ export default function PostPage() {
     fetchPost();
   }, [postSlug]);
 
+  var selectedLabel = ""; // Default value
+
+if (post && post.category) {
+  switch (post.category) {
+    case 'événements':
+      selectedLabel = "/Evenement?searchTerm=&sort=desc&category=événements&subcategory=";
+      break;
+    case 'santé et mentale':
+      selectedLabel = "/MentalHelath?searchTerm=&sort=desc&category=événements&subcategory=";
+      break;
+    case 'Parent et enfants':
+      selectedLabel = "/ParentEtEnfant?searchTerm=&sort=desc&category=événements&subcategory=";
+      break;
+    case 'Cabinet':
+      selectedLabel = "/cabinet?adresse=";
+      break;
+    default:
+      // Handle any other category not listed above
+      break;
+  }
+}
+console.log(selectedLabel);
+
   useEffect(() => {
     try {
       const fetchRecentPosts = async () => {
@@ -49,6 +72,7 @@ export default function PostPage() {
       console.log(error.message);
     }
   }, []);
+ 
 
   if (loading)
     return (
@@ -56,8 +80,6 @@ export default function PostPage() {
         <Spinner size='xl' />
       </div>
     );
-  let selectedLabel="/Evenement?searchTerm=&sort=desc&category=événements&subcategory=";
-
 
   return (
     <main className='p-3 flex flex-col max-w-6xl mx-auto min-h-screen'>
@@ -67,7 +89,7 @@ export default function PostPage() {
       </h1>
       <div style={{display:'flex',flexDirection:'row',justifyContent:'center'}}>
       <Link
-        to={`/?category=${post && post.category}`}
+        to={`${selectedLabel}`}
         className='self-center mt-5'
       >
         <Button color='gray' pill size='xs'>
@@ -76,7 +98,7 @@ export default function PostPage() {
         
       </Link>
       <Link
-        to={`/search?category=${post && post.category}`}
+        to={`${selectedLabel}${post.subcategory}`}
         className='self-center mt-5'
       >
         <Button color='gray' pill size='xs'>
