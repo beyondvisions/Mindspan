@@ -137,7 +137,7 @@ console.log(totalCabinets);
 <div>
             <div className={styles.hero}>
                 <div className={styles.background_image}>
-                    <img src='home_bg.jpg' alt="" style={{ width: '100%', height: '70vh', objectFit: 'cover' }} />
+                    <img src='home_bg.jpg' alt="" style={{ width: '100%', height: '82vh', objectFit: 'cover' }} />
                     {titles.map((item, index) => (
                     <div key={index} className={styles.hero_content_area}>
                            <h1>{titles[currentTitleIndex].titre}</h1>
@@ -192,8 +192,8 @@ Get started            </Button>
 
             <div className={styles.packages}>
                 <h3 className={styles.title}>Transparent Health Authority</h3>
-                <p>We take pride in being recognized as a reliable nonprofit provider of quality health information..</p>
-                <ul className={styles.grid}>
+                <p style={{paddingBottom:'30px'}}>We take pride in being recognized as a reliable nonprofit provider of quality health information..</p>
+                <div className={styles.grid}>
                     <li className='shadowcarta'>
                       <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
                         <FaExchangeAlt style={{fontSize:'3rem',textAlign:'center'}}/>
@@ -225,7 +225,7 @@ Get started            </Button>
                             Dependable Support</h4>
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque officia laboriosam beatae voluptatem aliquid nihil, itaque qu </p>
                     </li>
-                </ul>
+                </div>
                 <hr />
             </div>
 
@@ -337,10 +337,6 @@ Get started            </Button>
             </div>
         </div>
 
-
-
-
-
             <div>
                 <h3 className={styles.title}>Featured</h3>
                 <div className={styles.subscribe}>
@@ -349,44 +345,12 @@ Get started            </Button>
                 </div>
             </div>
 
-            <div>
-                <div className={styles.slider}>
-                    <h3 className={styles.title}><b>Featured</b></h3>
-                    <h2 className={styles.subscribe__title}> sawet el battaaa</h2>
-                    <div className={styles.swiper}>
-                       
-                        <div className={styles.swiper_wrapper}>
 
 
 
 
 
-
-
-                        </div>
-
-
-
-
-
-
-
-
-                    </div>
-                </div>
-
-
-            </div>
-            <div style={{display:'flex',justifyContent:'space-evenly'}}>
-            <AudioPlayer audioSrc={aud} label="relaxation"/>
-            <AudioPlayer audioSrc={aud} label="relaxation"/>
-            <AudioPlayer audioSrc={aud} label="relaxation"/>
-
-
-            </div>
-
-
-            <div>
+            <div style={{paddingTop:'100px'}}>
                 <h3 className={styles.title}>GET OUR NEWSLETTER</h3>
                 <div className={styles.subscribe}>
                     <h2 className={styles.subscribe__title}>Let's keep in touch</h2>
