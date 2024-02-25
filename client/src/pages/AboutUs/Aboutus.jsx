@@ -46,7 +46,8 @@ const Aboutus = () => {
         </div>
         <div className='containerwhy' >
             <h1 ><b>Why Our Mental Health Consultants are the best Choice</b></h1>
-            <div className='containercardinfo'>
+           <div className='containercardinfopromax'>
+           <div className='containercardinfo'>
                 <div className='cardinfo' id='card11'>
                     <div className='cardinfoimg'><img src='expertise.png'></img></div>
                     <h2>Expertise Team</h2>
@@ -63,6 +64,7 @@ const Aboutus = () => {
                     <div className='containp'><p>Lorem ipsum dolor sit amet consectetur. Convallis est urna adipiscing fringilla nulla diam lorem non mauris.</p></div>
                 </div>
             </div>
+           </div>
         </div>
         
         <div className='containcustomer'>

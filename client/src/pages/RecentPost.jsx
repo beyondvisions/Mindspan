@@ -2,12 +2,12 @@ import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import PostCard from '../components/PostCard';
 
-export default function RecentPost({ category, subcategory = '' }) {
+export default function RecentPost({ category, subcategory = '' ,}) {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const res = await fetch(`/api/post/getPosts?limit=4sort=desc&category=${category}&subcategory=${subcategory}`);
+      const res = await fetch(`/api/post/getPosts?limit=3sort=desc&category=${category}&subcategory=${subcategory}`);
       const data = await res.json();
       setPosts(data.posts);
     };

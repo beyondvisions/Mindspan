@@ -187,7 +187,11 @@ export default function Evenement() {
             </div>
           </div>
          
-          <div className='btnfiltre'><Button   type='submit'>
+          <div ><Button 
+          style={{    backgroundColor:'#D294BB' 
+          }}
+          className="group flex items-center justify-center p-0.5 text-center font-medium relative focus:z-10 focus:outline-none text-white bg-cyan-700 border border-transparent enabled:hover:bg-cyan-800 dark:bg-cyan-600 dark:enabled:hover:bg-cyan-700 rounded-lg focus:ring-2 focus:border-custom-color focus:ring-custom-color dark:focus:border-custom-color dark:focus:ring-custom-color"
+           type='submit'>
             Apply Filters
             </Button>
             </div>

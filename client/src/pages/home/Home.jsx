@@ -7,12 +7,14 @@ import { FaBook} from 'react-icons/fa';
 import { FaExchangeAlt } from 'react-icons/fa';
 import axios from 'axios';
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import AudioPlayer from '../../components/musicplayer/AudioPLayer.jsx';
+import audioFile from "./scp.mp3";
 
 export default function Home() {
     const [clickedFilterIndex, setClickedFilterIndex] = useState(0);
   const [newsletters, setNewsletters] = useState([]);
   const [newSubscriberEmail, setNewSubscriberEmail] = useState('');
-//add new email 
 const handleAddSubscriber = async () => {
     try {
       const res = await axios.post('/api/newsletters/emails/add', { email: newSubscriberEmail });
@@ -48,52 +50,110 @@ const handleAddSubscriber = async () => {
   }, []);
   const handleClick = (index) => {
     setClickedFilterIndex(index);
-
 };
+
+const [titles, setTitles] = useState([ 
+  {
+    titre:'Strengthen Mental Resilience',
+    description:'We will help you to improve your mental health'
+  },
+  {
+    titre:'Cultivating Mental Toughness',
+    description:'Our support will aid in enhancing your mental well-being.'
+  },
+  {
+    titre:'Developing Mental Fortitude',
+    description:'Together, we will work on strengthening your mental well-being'
+  }
+])
+
+const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
+
+
+
+useEffect(() => {
+    const interval = setInterval(() => {
+        setCurrentTitleIndex((prevIndex) => (prevIndex + 1) % titles.length);
+    }, 8000);
+    return () => clearInterval(interval);
+}, [titles]);
+
+
+
+
+
+
+
+
   return (
     <div>
 <div>
             <div className={styles.hero}>
                 <div className={styles.background_image}>
-                    <img src='home_bg.jpg' alt="" style={{ width: '100%', height: '81vh', objectFit: 'cover' }} />
-                    <div className={styles.hero_content_area}>
-                        <h1>Strengthen Mental Resilience</h1>
-                        <h3>We will help you to improve your mental health</h3>
-                        <a href="#" className={styles.btn}>Discover More</a>
+                    <img src='home_bg.jpg' alt="" style={{ width: '100%', height: '70vh', objectFit: 'cover' }} />
+                    {titles.map((item, index) => (
+                    <div key={index} className={styles.hero_content_area}>
+                           <h1>{titles[currentTitleIndex].titre}</h1>
+                        <h3>{titles[currentTitleIndex].description}</h3>
+                        <Link to='./search'><a href="#" className={styles.btn}>Discover More</a>   </Link>
                     </div>
+                     ))}
+
                 </div>
             </div>
+            <div className={styles.containerdestination}>
+             <div className={styles.conimgpurp}><img src='femme.jpg'></img> </div>
             <div className={styles.destinations}>
-                <h3 className={styles.title}>Our purpose:</h3>
-                <p>Dedicated to your well-being, our mission is to provide you with the knowledge and tools essential for fortifying your mental health.
+                <h3 className={styles.newtit}>You deserve to be mentaly health</h3>
+                <p className={styles.newpurpp} >Dedicated to your well-being, our mission is to provide you with the knowledge and tools essential for fortifying your mental health.
+                    We are committed to ools essential for fortifying your mental health.
+                    to your well-being, our mission is to provide you with the knowledge and tools essential for fortifying your mental health.
+                    We are committed to ools essential for fortifying your mental health.
                     We are committed to empowering you with valuable insights and capabilities, ensuring your journey towards enhanced well-being is supported and guided every step of the way.</p>
-                <hr />
+                <p className={styles.respp} >Dedicated to your well-being, our mission is to provide you with the knowledge and tools essential for fortifying your mental health.
+                    We are committed to empowering you with valuable insights and capabilities,</p>
+
+                <div className={styles.congetget}><Link to='./AboutUs'><div className={styles.congetgetpro}><span>Get started</span></div></Link></div>
             </div>
+            </div>
+         <div className={styles.containcomptourpromax}>
+         <div className={styles.containcomptour}>
+              <div className={styles.titcomptour}>
+                <h1>Empowering you with our<Link to='./cabinet'><span className={styles.terapist}> therapists </span></Link>throught <span className={styles.mheal}> mental health </span>awarness</h1>
+                <p>We are in a mission to provide comprhensivemental health support. our passionate team ofprofessionals is dedicated to fostering your well-being and mental health..</p>
+              </div> 
+              <div className={styles.containlescomptour}>
+                <div className={styles.comptourwahda}><img src='expertise.png'></img><span >3000+</span><p>articles</p></div>
+                <div className={styles.comptourwahda} ><img src='expertise.png'></img><span>3000+</span><p>articles</p></div>
+                <div className={styles.comptourwahda}><img src='expertise.png'></img><span>3000+</span><p>articles</p></div>
+              </div>
+            </div>
+         </div>
 
             <div className={styles.packages}>
                 <h3 className={styles.title}>Transparent Health Authority</h3>
-                <p>We take pride in being recognized as a reliable nonprofit provider of quality health information. Our commitment to transparency ensures that individuals can trust the accuracy and credibility of the health information we deliver. With a focus on integrity and trustworthiness, we strive to empower individuals with knowledge that enables informed decisions and fosters a healthier community.</p>
+                <p>We take pride in being recognized as a reliable nonprofit provider of quality health information..</p>
                 <ul className={styles.grid}>
-                    <li>
+                    <li className='shadowcarta'>
                       <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
                         <FaExchangeAlt style={{fontSize:'3rem',textAlign:'center'}}/>
                         </div>   
                         <h4>Trustworthy Guidance</h4>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque officia laboriosam beatae voluptatem aliquid nihil, itaque quos, deserunt amet nisi odio cupiditate voluptate repudiandae inventore assumenda non soluta facilis. Voluptatem.</p>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque officia laboriosam beatae voluptatem aliquid nihil, i </p>
                     </li>
                     <li>
                         <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
                         <FaStreetView  style={{fontSize:'3rem',textAlign:'center'}}/>
                         </div>   
                         <h4>Cultivate Life Skills</h4>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque officia laboriosam beatae voluptatem aliquid nihil, itaque quos, deserunt amet nisi odio cupiditate voluptate repudiandae inventore assumenda non soluta facilis. Voluptatem.</p>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque officia laboriosam beatae voluptatem aliquid nihil, itaque</p>
                     </li>
                     <li>
                         <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
                         <FaBook style={{fontSize:'3rem',textAlign:'center'}}/>
                         </div>   
                         <h4>Feel-Better Strategies</h4>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque officia laboriosam beatae voluptatem aliquid nihil, itaque quos, deserunt amet nisi odio cupiditate voluptate repudiandae inventore assumenda non soluta facilis. Voluptatem.</p>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque officia laboriosam beatae voluptatem aliquid nihil, itaque q</p>
                     </li>
                     <li>
                         
@@ -103,13 +163,13 @@ const handleAddSubscriber = async () => {
 
                         <h4>
                             Dependable Support</h4>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque officia laboriosam beatae voluptatem aliquid nihil, itaque quos, deserunt amet nisi odio cupiditate voluptate repudiandae inventore assumenda non soluta facilis. Voluptatem.</p>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque officia laboriosam beatae voluptatem aliquid nihil, itaque qu </p>
                     </li>
                 </ul>
                 <hr />
             </div>
 
-            <div>
+            <div className={styles.containhelptoday} >
                 <h3 className={styles.title}>Find the help you need today</h3>
                 <div className={styles.subscribe}>
                <h2 className={styles.subscribe__title}>Pick a topic below that you’d like to explore:</h2>
@@ -120,17 +180,35 @@ const handleAddSubscriber = async () => {
             <h3 style={{ color: '#873260', padding: '10px', textAlign: 'center', fontSize: '2rem' }}>
                 Evénement</h3>
             </div>
-            {categories.map((category, index) => (
-              category.catego.toLowerCase() === 'événements' &&
-              <div  key={index}
-              style={{ backgroundColor: clickedFilterIndex === index ? '#D294BB' : 'white', borderColor: clickedFilterIndex === index ? '#D294BB' : 'black', color: clickedFilterIndex === index ? 'white' : '#D294BB' }}
+          {categories
+            .filter(category => category.catego.toLowerCase() === 'événements')
+            .slice(0, 5) 
+            .map((category, index) => (
+          <Link
+            key={index}
+            to={`/Evenement?searchTerm=&sort=desc&category=événements&subcategory=${category.name.replace(/ /g, '+')}`}
+          >
+            <div
+              style={{
+                backgroundColor: clickedFilterIndex === index ? '#D294BB' : 'white',
+                borderColor: clickedFilterIndex === index ? '#D294BB' : 'black',
+                color: clickedFilterIndex === index ? 'white' : '#D294BB',
+              }}
               className={`onefilter ${clickedFilterIndex === index ? 'clicked' : ''}`}
               onClick={() => handleClick(index)}
-
-              >
-                <span>{category.name}</span>
-              </div>
-            ))}
+            >
+              <span>{category.name}</span>
+              
+            </div>
+          </Link>
+        )
+      )}
+     
+      <Link to='./Evenement'>
+         <button className='onefilter'> <span>Se more</span></button>
+    </Link>
+                
+            
             
           </div>
           <div >
@@ -138,17 +216,33 @@ const handleAddSubscriber = async () => {
             <h3 style={{ color: '#873260', padding: '10px', textAlign: 'center', fontSize: '2rem' }}>
                 Parent et enfants</h3>
             </div>
-            {categories.map((category, index) => (
-              category.catego.toLowerCase() === 'parent et enfants' &&
-              <div  key={index}
-              style={{ backgroundColor: clickedFilterIndex === index ? '#D294BB' : 'white', borderColor: clickedFilterIndex === index ? '#D294BB' : 'black', color: clickedFilterIndex === index ? 'white' : '#D294BB' }}
-              className={`onefilter ${clickedFilterIndex === index ? 'clicked' : ''}`}
-              onClick={() => handleClick(index)}
+         
+                {categories
+                  .filter(category => category.catego.toLowerCase() === 'parent et enfants')
+                  .slice(0, 5) 
+                  .map((category, index) => (
+                <Link
+                  to={`/ParentEtEnfant?searchTerm=&sort=desc&category=ParentEtEnfant&subcategory=${category.name.replace(/ /g, '+')}`}
+                  key={index}
+                >
+                  <div
+                    style={{
+                      backgroundColor: clickedFilterIndex === index ? '#D294BB' : 'white',
+                      borderColor: clickedFilterIndex === index ? '#D294BB' : 'black',
+                      color: clickedFilterIndex === index ? 'white' : '#D294BB',
+                    }}
+                    className={`onefilter ${clickedFilterIndex === index ? 'clicked' : ''}`}
+                    onClick={() => handleClick(index)}
+                  >
+                    <span>{category.name}</span>
+                  </div>
+                </Link>
+              )
+             )}
 
-              >
-                <span>{category.name}</span>
-              </div>
-            ))}
+            <Link to='./ParentEtEnfant'>
+               <button className='onefilter'> <span>Se more</span></button>
+            </Link>
             
           </div>
           <div >
@@ -156,17 +250,25 @@ const handleAddSubscriber = async () => {
             <h3 style={{ color: '#873260', padding: '10px', textAlign: 'center', fontSize: '2rem' }}>
                 Santé Mentale</h3>
             </div>
-            {categories.map((category, index) => (
-              category.catego.toLowerCase() === 'santé et mentale' &&
-              <div  key={index}
-              style={{ backgroundColor: clickedFilterIndex === index ? '#D294BB' : 'white', borderColor: clickedFilterIndex === index ? '#D294BB' : 'black', color: clickedFilterIndex === index ? 'white' : '#D294BB' }}
-              className={`onefilter ${clickedFilterIndex === index ? 'clicked' : ''}`}
-              onClick={() => handleClick(index)}
-
-              >
-                <span>{category.name}</span>
-              </div>
+          
+            {categories
+  .filter(category => category.catego.toLowerCase() === 'santé et mentale')
+  .slice(0, 5) 
+  .map((category, index) => (
+            
+               <Link to={`/MentalHelath?searchTerm=&sort=desc&category=événements&subcategory=${category.name.replace(/ /g, '+')}`}>  <div  key={index}
+               style={{ backgroundColor: clickedFilterIndex === index ? '#D294BB' : 'white', borderColor: clickedFilterIndex === index ? '#D294BB' : 'black', color: clickedFilterIndex === index ? 'white' : '#D294BB' }}
+               className={`onefilter ${clickedFilterIndex === index ? 'clicked' : ''}`}
+               onClick={() => handleClick(index)}
+ 
+               >
+                 <span>{category.name}</span>
+               </div>
+               </Link>
             ))}
+            <Link to='./MentalHelath'>
+               <button className='onefilter'> <span>Se more</span></button>
+            </Link>
             
           </div>
         
@@ -199,7 +301,9 @@ const handleAddSubscriber = async () => {
                     <div className={styles.swiper}>
                        
                         <div className={styles.swiper_wrapper}>
-
+                        <div className="container">
+      <AudioPlayer audioSrc={audioFile} />
+    </div>
 
 
 

@@ -54,38 +54,47 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        
+
     }
     .cabinetarticle {
         flex-direction: column;
     }
     #cabinetimg {
-        width: 100%;
-        
+        width: 35%;
+
+    }
+    .layoutcardcabinet {
+        padding-left: 10px;
     }
 }
 @media (max-width: 500px) {
     .cabinetarticle {
         flex-direction: column;
         width: 90%;
-
-    }
-    #cabinetimg {
-        width: 100%;
-    }
-    
-  
-}
-@media (max-width: 500px) {
-    .cabinetarticle {
-       
         font-size: 0.4rem;
 
     }
-
     #cabinetimg {
-        width: 100%;
+        width: 30%;
     }
-    
-  
+
+
+}
+
+@media (max-width: 330px) {
+    .cabinetarticle {
+        flex-direction: column;
+        width: 90%;
+        font-size: 0.4rem;
+
+    }
+    #cabinetimg {
+        width: 27%;
+    }
+    .layoutcardcabinet {
+        padding: 20px;
+        width: 170px;
+    }
+
+
 }

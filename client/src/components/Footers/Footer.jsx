@@ -45,8 +45,10 @@ const Footer = () => {
               <h3>Événements</h3>
               </Link>
             </div>
-            {categories.map((category, index) => (
-              category.catego.toLowerCase() === 'événements' &&
+            {categories
+  .filter(category => category.catego.toLowerCase() === 'santé et mentale')
+  .slice(0, 5) 
+  .map((category, index) => (
               <div className='boxcateg' key={index}>
                 <Link to={`/Evenement?searchTerm=&sort=desc&category=événements&subcategory=${category.name.replace(/ /g, '+')}`}>
                 <IonIcon icon={chevronForwardOutline} id='iconcart' />
@@ -62,8 +64,10 @@ const Footer = () => {
               <h3>Parent et enfants</h3>
               </Link>
             </div>
-            {categories.map((category, index) => (
-              category.catego.toLowerCase() === 'parent et enfants' &&
+            {categories
+                  .filter(category => category.catego.toLowerCase() === 'parent et enfants')
+                  .slice(0, 5) 
+                  .map((category, index) => (
               <div className='boxcateg' key={index}>
                 <Link to={`/ParentEtEnfant?searchTerm=&sort=desc&category=événements&subcategory=${category.name.replace(/ /g, '+')}`}>
                 <IonIcon icon={chevronForwardOutline} id='iconcart' />
@@ -79,8 +83,10 @@ const Footer = () => {
               <h3>Santé Mentale</h3>
               </Link>
             </div>
-            {categories.map((category, index) => (
-              category.catego.toLowerCase() === 'santé et mentale' &&
+            {categories
+            .filter(category => category.catego.toLowerCase() === 'événements')
+            .slice(0, 5) 
+            .map((category, index) => (
               <div className='boxcateg' key={index}>
                 <Link to={`/MentalHelath?searchTerm=&sort=desc&category=événements&subcategory=${category.name.replace(/ /g, '+')}`}>
                 <IonIcon icon={chevronForwardOutline} id='iconcart' />

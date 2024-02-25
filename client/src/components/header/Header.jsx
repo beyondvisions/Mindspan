@@ -76,8 +76,8 @@ useEffect(() => {
   <div className="relative">
     <input
       type='text'
-      placeholder='Search...'
-      className='lg:inline lg:w-full w-full md:w-3/4 sm:w-1/4 px-2 py-1 md:px-3 md:py-2 sm:px-4 sm:py-3 bg-gray-100 rounded-md focus:outline-none focus:ring focus:border-fuchsia-500'
+      placeholder='Search Articles ...'
+      class="block w-full border disabled:cursor-not-allowed disabled:opacity-50 bg-gray-50 border-gray-300 text-gray-900 focus:border-custom-color focus:ring-custom-color dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-custom-color dark:focus:ring-custom-color p-2.5 text-sm rounded-lg"
 
       value={searchTerm}
       onChange={(e) => setSearchTerm(e.target.value)}
@@ -132,12 +132,16 @@ useEffect(() => {
         ) : (
           <div className='flex space-x-4 '>
           <Link to='/sign-in'>
-            <Button style={{ backgroundColor: '#D294BB' }}  >
+            <Button  style={{ backgroundColor: '#D294BB' }} 
+                          className="focus:border-custom-color focus:ring-custom-color dark:focus:border-custom-color dark:focus:ring-custom-color">
               Sign In
             </Button>
           </Link>
             <Link to='/sign-up'>
-            <Button  style={{ backgroundColor: '#D294BB' }} >
+            <Button  style={{ backgroundColor: '#D294BB' }} 
+                          className="focus:border-custom-color focus:ring-custom-color dark:focus:border-custom-color dark:focus:ring-custom-color"
+
+            >
               Sign up
             </Button>
           </Link>

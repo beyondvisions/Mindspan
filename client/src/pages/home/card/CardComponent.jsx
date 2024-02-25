@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from '../card/CardComponent.module.css'
-import duckaudio from './duckaudio.mp3';
+
+
 
 function CardComponent(props) {
     const [isPlaying, setIsPlaying] = useState(false);
