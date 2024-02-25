@@ -103,6 +103,8 @@ div h3.title {
 }
 
 .box select {
+    background-image:none;
+
     background-color: #873260;
     border-radius: 10px;
     color: white;
@@ -117,7 +119,26 @@ div h3.title {
     appearance: button;
     outline: none;
 }
+select:not([size]) {
+    background-image: none
 
+}
+._box_i40r8_179 select {
+    background-image: none;
+    background-color: #873260;
+    border-radius: 10px;
+    color: white;
+    padding: 12px;
+    width: 250px;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 20px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    outline: none;
+}
 
 
 
