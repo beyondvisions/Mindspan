@@ -99,10 +99,10 @@ export default function UserComments() {
                       <p className='line-clamp-2'>{comment.numberOfLikes}</p>
                     </Table.Cell>
                     <Table.Cell>
-                      {comment.postId}
+                      {comment.postId.title}
                     </Table.Cell>
                     <Table.Cell>
-                      {comment.userId}
+                      {comment.userId.username}
                     </Table.Cell>
                     <Table.Cell>
                       <p className='line-clamp-10'>{comment.createdAt.split("T").join("\n").split("+")[0]}</p>

@@ -110,6 +110,8 @@ export const getcomments = async (req, res, next) => {
       .sort({ createdAt: sortDirection })
       .skip(startIndex)
       .limit(limit)
+      .populate('postId')
+      .populate('userId')
       ;
     const totalComments = await Comment.countDocuments();
     const now = new Date();
@@ -142,6 +144,8 @@ export const getusercomments = async (req, res, next) => {
     const comments = await Comment.find({ userId: req.user._id })
       .sort({ createdAt: sortDirection })
       .skip(startIndex)
+      .populate('postId')
+      .populate('userId')
       .limit(limit);
 
     // Calculate total comments for the user efficiently
@@ -169,7 +173,8 @@ export const getusercomments = async (req, res, next) => {
 export const getUserComments = async (req, res) => {
   try {
     const userId = req.params.userId;
-    const comments = await Comment.find({ userId });
+    const comments = await Comment.find({ userId })    .populate('postId')
+    .populate('userId');
     res.status(200).json(comments);
   } catch (error) {
     console.error(error);
