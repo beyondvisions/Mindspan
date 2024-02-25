@@ -25,6 +25,7 @@ import FAQ from './pages/FAQ/FAQ'
 import PolicyComponent from './pages/policy/PolicyComponent'
 import Wronpath from './pages/worngpath/Wronpath'
 import Home from './pages/home/Home';
+import GethelpComponent from './pages/gethelp/GethelpComponent'
 import './index.css';
 export default function App() {
   return (
@@ -34,6 +35,7 @@ export default function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/sign-in' element={<SignIn/>} />
+        <Route path='/sign-un' element={<SignUp/>} />
         <Route path='/verify' element={<VerificationPage/>} />
         <Route path='/password' element={<Password/>} />
         <Route path='/contact' element={<ContactComponent/>} />
@@ -45,7 +47,11 @@ export default function App() {
         <Route path='/cabinet' element={<Cabinet/>} />
         <Route path='/aboutUs' element={<Aboutus/>} />
         <Route path='/search' element={<Search />} />
+        <Route path='/GetHelp' element={<GethelpComponent />} />
         <Route path="*" element={<Wronpath/>} />
+        <Route path='/post/:postSlug' element={<PostPage />} />
+        
+
         <Route element={<PrivateRoute />}>
           <Route path='/dashboard' element={<Dashboard />} />
         </Route>
@@ -57,7 +63,6 @@ export default function App() {
 
         </Route>
 
-        <Route path='/post/:postSlug' element={<PostPage />} />
       </Routes>
       <Footer/>
     </BrowserRouter>
