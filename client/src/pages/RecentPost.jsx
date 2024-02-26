@@ -16,11 +16,12 @@ export default function RecentPost({ category, subcategory = '' ,}) {
 
   return (
     <div>
-      <div className='max-w-6xl mx-auto p-3 flex flex-col gap-8 py-7'>
+      <div className='max-w-5xl mx-auto p-3 flex flex-col gap-8 py-7'>
         {posts && posts.length > 0 && (
           <div className='flex flex-col gap-6'>
-            <h2 className='text-2xl font-semibold text-center'>Recent {category} Posts</h2>
-            <div style={{ display: 'flex', justifyContent: 'space-evenly', gap: '1rem' }}>           
+            <h2 className='text-2xl font-semibold text-center'               style={{color:'#873260'}}
+>Recent {category} Posts</h2>
+<div class="flex flex-col gap-10 md:flex-row md:justify-between md:gap-10">
                {posts.map((post) => (
                 <PostCard key={post._id} post={post} />
               ))}
@@ -28,7 +29,7 @@ export default function RecentPost({ category, subcategory = '' ,}) {
             <Link
               to={'/search'}
               className='text-lg text-white hover:underline text-center'
-              style={{color:'white'}}
+              style={{color:'#873260'}}
               >
               View all posts
             </Link>

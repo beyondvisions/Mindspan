@@ -54,6 +54,8 @@ function AudioPlayer({ audioSrc,label }) {
     <div className="player-card">
       <img className='audioplayer' src="cover-image.jpg" alt="Description of the cover image" />
       <input className="inputmediaplayer"
+      style={ {  accentColor: '#D294BB',width:'100%',backgroundColor:'white'
+      }}
         type="range"
         min="0"
         max={duration}
@@ -68,8 +70,25 @@ function AudioPlayer({ audioSrc,label }) {
         <p>{formatDuration(duration)}</p>
       </div>
 
-      <button className='btnmediaplayer' onClick={handlePlayPause}>
-        <span>
+      <button className='btnmediaplayer' onClick={handlePlayPause}
+      style={
+          {width:'6rem',
+            color:'white',
+            fontSize:'16px',
+            fontWeight:'600',
+            display:'flex',
+            alignItems:'center',
+            justifyContent:'center',
+            color:'white',
+            backgroundColor:'#D294BB',
+            border:'none',
+            borderRadius:'10px',
+            cursor:'pointer',
+            margin:'5px uato 10px auto'
+          }
+        }
+      >
+        <span >
           {isPlaying ? "pause" : "play"}
         </span>
       </button>

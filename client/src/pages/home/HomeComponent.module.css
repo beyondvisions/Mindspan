@@ -396,3 +396,22 @@ div h3.title {
     font-weight: 600;
    
 }
+
+.containersoundmediaplayer{
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+@media (max-width: 800px) {
+    .containersoundmediaplayer{
+        display: flex;
+        align-content: center;
+        flex-wrap: wrap;
+        flex-direction: column;
+        gap:30px
+    }
+
+
+
+}

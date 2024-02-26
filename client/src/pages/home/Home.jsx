@@ -175,33 +175,7 @@ Get started            </Button>
            
             </div>
             </div>
-   <div className={styles.containcomptourpromax}>
-              <div className={styles.title}>
-                <h1 style={{padding:'20px 0px'}}>Empowering you with our<Link to='./cabinet'><span className={styles.terapist}> therapists </span></Link>throught <Link to='MentalHelath'><span style={{color:"#873260"}}> mental health </span> </Link> awarness</h1>
-                <p style={{padding:'10px 0px'}}>We are in a mission to provide comprhensivemental health support. our passionate team ofprofessionals is dedicated to fostering your well-being and mental health..</p>
-              </div> 
-         <div className={styles.containcomptour}>
-             
-              <div className={styles.containlescomptour}>
-              <div style={{textAlign:'center'}}>
-
-                <div className={styles.comptourwahda}>
-                <img src='expertise.png'></img>
-                <span style={{color:'#873260'}} >{totalCategories}+</span>
-                <span>Catégories</span></div>
-                </div>
-                <div style={{textAlign:'center'}}>
-                <div className={styles.comptourwahda} ><img src='expertise.png' alt='test' ></img>
-                <span style={{color:'#873260'}} >{totalPosts}+</span><span>Articles</span></div>
-                </div>
-                <div style={{textAlign:'center'}}>
-                <div className={styles.comptourwahda}><img src='expertise.png'></img><span style={{color:'#873260'}} >{totalCabinets}+</span><span>articles</span></div>
-                </div>
-              </div>
-            </div>
-         </div>
-
-         <div className={styles.packages}>
+            <div className={styles.packages}>
                 <h3 className={styles.title} style={{padding:'30px 0px'}}>Transparent Health Authority</h3>
                 <p style={{ padding:'10px 10px'}}>We take pride in being recognized as a reliable nonprofit provider of quality health information..</p>
                 <div className={styles.grid}>
@@ -238,7 +212,42 @@ Get started            </Button>
                     </li>
                 </div>
                 <hr />
-            </div>          
+            </div> 
+          
+
+   <div className={styles.containcomptourpromax}>
+              <div className={styles.title}>
+                <h1 style={{padding:'20px 0px'}}>Empowering you with our<Link to='./cabinet'><span className={styles.terapist}> therapists </span></Link>throught <Link to='MentalHelath'><span style={{color:"#873260"}}> mental health </span> </Link> awarness</h1>
+                <p style={{padding:'20px 30px'}}>We are in a mission to provide comprhensivemental health support. our passionate team ofprofessionals is dedicated to fostering your well-being and mental health..</p>
+              </div> 
+         <div className={styles.containcomptour}>
+             
+              <div className={styles.containlescomptour}>
+              <div style={{textAlign:'center'}}>
+
+                <div className={styles.comptourwahda}>
+                <img src='expertise.png'></img>
+                <span style={{color:'#873260'}} >{totalCategories}+</span>
+                <span>Catégories</span></div>
+                </div>
+                <div style={{textAlign:'center'}}>
+                <div className={styles.comptourwahda} ><img src='expertise.png' alt='test' ></img>
+                <span style={{color:'#873260'}} >{totalPosts}+</span><span>Articles</span></div>
+                </div>
+                <div style={{textAlign:'center'}}>
+                <div className={styles.comptourwahda}><img src='expertise.png'></img><span style={{color:'#873260'}} >{totalCabinets}+</span><span>articles</span></div>
+                </div>
+              </div>
+            </div>
+         </div>
+         <div>
+                <div >
+                   <RecentPost category='événements' subcategory=''/>
+                </div>
+            </div>
+
+
+         
             <div className={styles.containhelptoday} >
                 <h3 className={styles.title} style={{padding:'20px 0px'}}>Find the help you need today</h3>
                 <div className={styles.subscribe}>
@@ -346,6 +355,21 @@ Get started            </Button>
                   
             </div>
         </div>
+
+
+<div>
+        <h3 className={styles.title} style={{padding:'20px 0px'}}>In case you need to relax</h3>
+
+<div className={styles.containersoundmediaplayer}>
+
+            <AudioPlayer audioSrc={aud} label="relaxation"/>
+            <AudioPlayer audioSrc={aud} label="relaxation"/>
+            <AudioPlayer audioSrc={aud} label="relaxation"/>
+
+          
+
+            </div>
+            </div>
 
             <div >
                 <h3 className={styles.title} style={{padding:'40px 0px'}}>GET OUR NEWSLETTER</h3>
