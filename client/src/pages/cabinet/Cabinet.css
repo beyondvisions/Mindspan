@@ -84,16 +84,22 @@ margin-left: 1rem;
 .onefilter {
     width: auto;
     padding: 3px 7px;
-    border: 1px solid black;
     border-radius: 20px;
     height: 25px;
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
     margin-bottom: 10px;
-    margin-right:10px ;
+    margin-right: 10px;
     cursor: pointer;
 }
+
+.onefilter:hover {
+    background-color: #D294BB;
+    color: white;
+}
+
 .onefilter span{
     font-weight: 600
 }

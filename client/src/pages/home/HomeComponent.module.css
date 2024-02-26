@@ -64,6 +64,7 @@ div h3.title {
     align-items: center;
     justify-content: center;
     background: #E0D0E8;
+    width: 100%;
     border-radius: 10px;
     padding: 10px;
 }
@@ -160,7 +161,7 @@ width: 100%;
 .containerdestination {
     display: grid;
     grid-template-columns: 40% 60%;
-    height: 100vh;
+    height: 80vh;
     justify-content: center;
         padding: 20px 0px;
 
@@ -202,7 +203,7 @@ width: 100%;
 }
 
 .containhelptoday {
-    height: auto;
+    height:auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -262,6 +263,7 @@ div h3.title {
 .containcomptourpromax{
     flex-direction: column;
     display: flex;
+    height: auto;
     justify-content: center;
     align-content: center;
     padding: 20px 10px;
@@ -290,6 +292,7 @@ div h3.title {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        height: auto;
     }    
  
     .title h1 {
@@ -308,11 +311,11 @@ div h3.title {
     flex-wrap:wrap;
 }
 .comptourwahda img{
-    width: 50%;
+    width: 30%;
     text-align: center;
 }
 .comptourwahda span {
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 
 
@@ -332,7 +335,7 @@ div h3.title {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    padding:  40px 20px 70px 20px;
+    padding: 20px ;
 }
 
 .packages .grid li {
@@ -351,8 +354,9 @@ div h3.title {
 }
 @media (max-width: 800px) {
     .packages .grid {
-        display: block;
         justify-content: center;
+        display: block;
+        gap: 20px;
 
     }
 
@@ -367,4 +371,28 @@ div h3.title {
         display: flex;
     }
 
+}
+.onefilter {
+    width: auto;
+    padding: 3px 7px;
+    border: 1px solid white;
+    border-radius: 20px;
+    height: 25px;
+    display: flex;
+    border: 1px solid rgb(255, 255, 255);
+
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-right:10px ;
+    cursor: pointer;
+    color: #D294BB;
+}
+.onefilter {
+    cursor: pointer;
+    width: auto;
+}
+.onefilter span{
+    font-weight: 600;
+   
 }

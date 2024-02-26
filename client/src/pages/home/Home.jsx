@@ -12,7 +12,7 @@ import aud from './scp.mp3'
 import { Button } from 'flowbite-react';
 import RecentPost from '../RecentPost';
 export default function Home() {
-    const [clickedFilterIndex, setClickedFilterIndex] = useState(0);
+    const [clickedFilterIndex, setClickedFilterIndex] = useState(10000);
   const [newsletters, setNewsletters] = useState([]);
   const [newSubscriberEmail, setNewSubscriberEmail] = useState('');
 const handleAddSubscriber = async () => {
@@ -152,7 +152,7 @@ console.log(totalCabinets);
 
                 </div>
             </div>
-            <div className={styles.containerdestination}>
+            <div className={styles.containerdestination} style={{paddingBottom:"40px"}}> 
              <div className={styles.conimgpurp}><img src='femme.jpg'></img> </div>
             <div className={styles.destinations}>
                 <h3 className={styles.newtit}>You deserve to be mentaly health</h3>
@@ -239,7 +239,113 @@ Get started            </Button>
                 </div>
                 <hr />
             </div>          
+            <div className={styles.containhelptoday} >
+                <h3 className={styles.title} style={{padding:'20px 0px'}}>Find the help you need today</h3>
+                <div className={styles.subscribe}>
+               <h2 className={styles.subscribe__title}>Pick a topic below that you’d like to explore:</h2>
+        
+               <div className="flex justify-center lg:justify-evenly flex-col lg:flex-row w-full">               
+                 <div >
+            <div >
+            <h3 style={{ color: '#873260', padding: '10px', textAlign: 'center', fontSize: '2rem' }}>
+                Evénement</h3>
+            </div>
+          {categories
+            .filter(category => category.catego.toLowerCase() === 'événements')
+            .slice(0, 5) 
+            .map((category, index) => (
+          <Link
+            key={index}
+            to={`/Evenement?searchTerm=&sort=desc&category=événements&subcategory=${category.name.replace(/ /g, '+')}`}
+          >
+            <div
+              style={{
+                backgroundColor: clickedFilterIndex === index ? '#D294BB' : 'white',
+                borderColor: clickedFilterIndex === index ? '#D294BB' : 'black',
+                color: clickedFilterIndex === index ? 'white' : '#D294BB',
+              }}
+              className={`onefilter ${clickedFilterIndex === index ? 'clicked' : ''}`}
+              onClick={() => handleClick(index)}
+            >
+              <span>{category.name}</span>
+              
+            </div>
+          </Link>
+        )
+      )}
+     
+      <Link to='./Evenement'>
+         <button className='onefilter'> <span style={{color:'white'}}>Se more</span></button>
+    </Link>
+                
+            
+            
+          </div>
+          <div >
+            <div >
+            <h3 style={{ color: '#873260', padding: '10px', textAlign: 'center', fontSize: '2rem' }}>
+                Parent et enfants</h3>
+            </div>
+         
+                {categories
+                  .filter(category => category.catego.toLowerCase() === 'parent et enfants')
+                  .slice(0, 5) 
+                  .map((category, index) => (
+                <Link
+                  to={`/ParentEtEnfant?searchTerm=&sort=desc&category=ParentEtEnfant&subcategory=${category.name.replace(/ /g, '+')}`}
+                  key={index}
+                >
+                  <div
+                    style={{
+                      backgroundColor: clickedFilterIndex === index ? '#D294BB' : 'white',
+                      borderColor: clickedFilterIndex === index ? '#D294BB' : 'black',
+                      color: clickedFilterIndex === index ? 'white' : '#D294BB',
+                    }}
+                    className={`onefilter ${clickedFilterIndex === index ? 'clicked' : ''}`}
+                    onClick={() => handleClick(index)}
+                  >
+                    <span>{category.name}</span>
+                  </div>
+                </Link>
+              )
+             )}
 
+            <Link to='./ParentEtEnfant'>
+               <button className='onefilter'> <span style={{color:'white'}}>Se more</span></button>
+            </Link>
+            
+          </div>
+          <div >
+            <div>
+            <h3 style={{ color: '#873260', padding: '10px', textAlign: 'center', fontSize: '2rem' }}>
+                Santé Mentale</h3>
+            </div>
+          
+            {categories
+  .filter(category => category.catego.toLowerCase() === 'santé et mentale')
+  .slice(0, 5) 
+  .map((category, index) => (
+            
+               <Link to={`/MentalHelath?searchTerm=&sort=desc&category=événements&subcategory=${category.name.replace(/ /g, '+')}`}>  <div  key={index}
+               style={{ backgroundColor: clickedFilterIndex === index ? '#D294BB' : 'white', borderColor: clickedFilterIndex === index ? '#D294BB' : 'black', color: clickedFilterIndex === index ? 'white' : '#D294BB' }}
+               className={`onefilter ${clickedFilterIndex === index ? 'clicked' : ''}`}
+               onClick={() => handleClick(index)}
+ 
+               >
+                 <span>{category.name}</span>
+               </div>
+               </Link>
+            ))}
+            <Link to='./MentalHelath'>
+               <button className='onefilter'> <span style={{color:'white'}}>Se more</span></button>
+            </Link>
+            
+          </div>
+        
+          </div>
+                  
+            </div>
+        </div>
 
             <div >
                 <h3 className={styles.title} style={{padding:'40px 0px'}}>GET OUR NEWSLETTER</h3>
