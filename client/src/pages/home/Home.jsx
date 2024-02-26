@@ -152,8 +152,42 @@ console.log(totalCabinets);
 
                 </div>
             </div>
-    
-   
+            <div className={styles.containerdestination}>
+             <div className={styles.conimgpurp}><img src='femme.jpg'></img> </div>
+            <div className={styles.destinations}>
+                <h3 className={styles.newtit}>You deserve to be mentaly health</h3>
+                <p className={styles.newpurpp} >Dedicated to your well-being, our mission is to provide you with the knowledge and tools essential for fortifying your mental health.
+                    We are committed to ools essential for fortifying your mental health.
+                    to your well-being, our mission is to provide you with the knowledge and tools essential for fortifying your mental health.
+                    We are committed to ools essential for fortifying your mental health.
+                    We are committed to empowering you with valuable insights and capabilities, ensuring your journey towards enhanced well-being is supported and guided every step of the way.</p>
+                <p className={styles.respp} >Dedicated to your well-being, our mission is to provide you with the knowledge and tools essential for fortifying your mental health.
+                    We are committed to empowering you with valuable insights and capabilities,</p>
+
+                <div className={styles.congetget}>
+            <Link to='/sign-up'>
+            <Button  style={{ backgroundColor: '#D294BB' }} 
+                          className="focus:border-custom-color focus:ring-custom-color dark:focus:border-custom-color dark:focus:ring-custom-color"
+
+            >
+Get started            </Button>
+          </Link>                  </div>
+           
+            </div>
+            </div>
+            <div className={styles.containcomptourpromax}>
+         <div className={styles.containcomptour}>
+              <div className={styles.titcomptour}>
+                <h1>Empowering you with our<Link to='./cabinet'><span className={styles.terapist}> therapists </span></Link>throught <Link to='MentalHelath'><span className={styles.mheal}> mental health </span> </Link> awarness</h1>
+                <p>We are in a mission to provide comprhensivemental health support. our passionate team ofprofessionals is dedicated to fostering your well-being and mental health..</p>
+              </div> 
+              <div className={styles.containlescomptour}>
+                <div className={styles.comptourwahda}><img src='expertise.png'></img><span >{totalCategories}+</span><p>Catégories</p></div>
+                <div className={styles.comptourwahda} ><img src='expertise.png'></img><span>{totalPosts}+</span><p>Articles</p></div>
+                <div className={styles.comptourwahda}><img src='expertise.png'></img><span>{totalCabinets}+</span><p>articles</p></div>
+              </div>
+            </div>
+         </div>
 
           
 
