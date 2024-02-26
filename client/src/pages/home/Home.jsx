@@ -55,23 +55,18 @@ const handleAddSubscriber = async () => {
 const [titles, setTitles] = useState([
   {
     titre: "Découvrez le bien-être mental : là où le savoir rencontre la compassion, et où le soutien s'épanouit.",
-    description: "We will help you to improve your mental health",
   },
   {
     titre: "Cultivating Mental Toughness",
-    description: "Our support will aid in enhancing your mental well-being.",
   },
   {
     titre: "Naviguer dans le bien-être mental : là où la compréhension rencontre la guérison et où la communauté prospère.",
-    description: "Together, we will work on strengthening your mental well-being",
   },
   {
     titre: "Un sanctuaire pour la santé mentale : où le soutien grandit, la compréhension approfondit et la guérison commence.",
-    description: "Together, we will work on strengthening your mental well-being",
   },
   {
     titre: "Nourrir les esprits, inspirer les cœurs : votre compagnon compatissant sur le chemin du bien-être mental.",
-    description: "Together, we will work on strengthening your mental well-being",
   },
 ]);
 
@@ -159,7 +154,6 @@ const [category, setCategory] = useState('événements');
                     {titles.map((item, index) => (
                     <div key={index} className={styles.hero_content_area}>
                            <h1>{titles[currentTitleIndex].titre}</h1>
-                        <h3>{titles[currentTitleIndex].description}</h3>
              <Link to='/search'>
             <Button  style={{ backgroundColor: '#D294BB' }} 
                           className="focus:border-custom-color focus:ring-custom-color dark:focus:border-custom-color dark:focus:ring-custom-color"

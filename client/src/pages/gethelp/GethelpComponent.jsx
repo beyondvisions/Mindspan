@@ -107,22 +107,22 @@ export default function GethelpComponent() {
 
                                 return allLocationsAreUSA ? (
                                     <li>
-                                        <strong>Emergency Helpline Numbers in USA</strong>
+                                        <strong style={{color:'#D294BB'}}>Emergency Helpline Numbers in USA</strong>
                                         {filteredOptions.map((option, index) => (
                                             <div key={index}>
-                                                <p>Phone Number: {option.phoneNumber}</p>
-                                                <p>Location: {option.location}</p>
-                                                <p>How to Help: {option.howToHelp}</p>
+                                                <p><b>Phone Number: </b>{option.phoneNumber}</p>
+                                                <p><b>Location:</b> {option.location}</p>
+                                                <p><b>How to Help:</b> {option.howToHelp}</p>
                                             </div>
                                         ))}
                                     </li>
                                 ) : (
                                     filteredOptions.map((option, index) => (
                                         <li key={index}>
-                                            <strong>{option.label}</strong>
-                                            <p>Phone Number: {option.phoneNumber}</p>
-                                            <p>Location: {option.location}</p>
-                                            <p>How to Help: {option.howToHelp}</p>
+                                            <strong style={{color:'#E0D0E8'}}>{option.label}</strong>
+                                            <p><b>Phone Number: </b>{option.phoneNumber}</p>
+                                            <p><b>Location: </b>{option.location}</p>
+                                            <p><b>How to Help: </b>{option.howToHelp}</p>
                                         </li>
                                     ))
                                 );
@@ -130,7 +130,7 @@ export default function GethelpComponent() {
                         ) : (
                             options.map((option, index) => (
                                 <li key={index}>
-                                    <strong>{option.label}</strong>
+                                    <strong style={{color:'#E0D0E8'}}>{option.label}</strong>
                                     <p>Phone Number: {option.phoneNumber}</p>
                                     <p>Location: {option.location}</p>
                                     <p>How to Help: {option.howToHelp}</p>
