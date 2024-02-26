@@ -1,3 +1,6 @@
+import "@fontsource/source-sans-pro"; // Defaults to weight 400
+import "@fontsource/source-sans-pro/400.css"; // Specify weight
+import "@fontsource/source-sans-pro/400-italic.css";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Dashboard from './pages/Dashboard';
 import SignUp from './pages/SignUp';
