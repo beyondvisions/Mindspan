@@ -259,3 +259,112 @@ div h3.title {
 }
 
 
+.containcomptourpromax{
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: 20px 10px;
+}
+.containlescomptour{
+    display: flex;
+    justify-content: space-evenly;
+}
+.containlescomptour span{
+    text-align: center;
+}
+
+.title{
+    text-align: center;
+    flex-direction: column;
+}
+.title h1 {
+    font-size: 1.5rem;
+}
+.title p {
+    font-size: 1rem;
+}
+@media (max-width: 800px) {
+
+    .containlescomptour{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }    
+ 
+    .title h1 {
+        font-size: 1.1rem;
+    }
+    .title p {
+        font-size: 0.7rem;
+    }
+}
+
+.comptourwahda{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap:wrap;
+}
+.comptourwahda img{
+    width: 50%;
+    text-align: center;
+}
+.comptourwahda span {
+    font-size: 1.5rem;
+}
+
+
+
+
+.packages  {
+    line-height: 1.6;
+    font-size: 1rem;
+    text-align: center;
+    gap:100px;
+}
+
+
+
+.packages .grid {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding:  40px 20px 70px 20px;
+}
+
+.packages .grid li {
+    flex-basis: calc(25% - 40px);
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, .2);
+    border-radius: 10px;
+}
+
+
+.packages .grid li h4 {
+    font-size: 1.5rem;
+    margin: 15px 0;
+}
+@media (max-width: 800px) {
+    .packages .grid {
+        display: block;
+        justify-content: center;
+
+    }
+
+
+    .packages .grid li {
+        flex-basis: calc(50% - 40px);
+    }
+    .newpurpp {
+        display: none;
+    }
+    .respp {
+        display: flex;
+    }
+
+}

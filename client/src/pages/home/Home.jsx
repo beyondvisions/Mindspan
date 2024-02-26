@@ -175,21 +175,70 @@ Get started            </Button>
            
             </div>
             </div>
-            <div className={styles.containcomptourpromax}>
-         <div className={styles.containcomptour}>
-              <div className={styles.titcomptour}>
-                <h1>Empowering you with our<Link to='./cabinet'><span className={styles.terapist}> therapists </span></Link>throught <Link to='MentalHelath'><span className={styles.mheal}> mental health </span> </Link> awarness</h1>
-                <p>We are in a mission to provide comprhensivemental health support. our passionate team ofprofessionals is dedicated to fostering your well-being and mental health..</p>
+   <div className={styles.containcomptourpromax}>
+              <div className={styles.title}>
+                <h1 style={{padding:'20px 0px'}}>Empowering you with our<Link to='./cabinet'><span className={styles.terapist}> therapists </span></Link>throught <Link to='MentalHelath'><span style={{color:"#873260"}}> mental health </span> </Link> awarness</h1>
+                <p style={{padding:'10px 0px'}}>We are in a mission to provide comprhensivemental health support. our passionate team ofprofessionals is dedicated to fostering your well-being and mental health..</p>
               </div> 
+         <div className={styles.containcomptour}>
+             
               <div className={styles.containlescomptour}>
-                <div className={styles.comptourwahda}><img src='expertise.png'></img><span >{totalCategories}+</span><p>Catégories</p></div>
-                <div className={styles.comptourwahda} ><img src='expertise.png'></img><span>{totalPosts}+</span><p>Articles</p></div>
-                <div className={styles.comptourwahda}><img src='expertise.png'></img><span>{totalCabinets}+</span><p>articles</p></div>
+              <div style={{textAlign:'center'}}>
+
+                <div className={styles.comptourwahda}>
+                <img src='expertise.png'></img>
+                <span style={{color:'#873260'}} >{totalCategories}+</span>
+                <span>Catégories</span></div>
+                </div>
+                <div style={{textAlign:'center'}}>
+                <div className={styles.comptourwahda} ><img src='expertise.png' alt='test' ></img>
+                <span style={{color:'#873260'}} >{totalPosts}+</span><span>Articles</span></div>
+                </div>
+                <div style={{textAlign:'center'}}>
+                <div className={styles.comptourwahda}><img src='expertise.png'></img><span style={{color:'#873260'}} >{totalCabinets}+</span><span>articles</span></div>
+                </div>
               </div>
             </div>
          </div>
 
-          
+         <div className={styles.packages}>
+                <h3 className={styles.title} style={{padding:'30px 0px'}}>Transparent Health Authority</h3>
+                <p style={{ padding:'10px 10px'}}>We take pride in being recognized as a reliable nonprofit provider of quality health information..</p>
+                <div className={styles.grid}>
+                    <li className='shadowcarta'>
+                      <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
+                        <FaExchangeAlt style={{fontSize:'3rem',textAlign:'center'}}/>
+                        </div>   
+                        <h4>Trustworthy Guidance</h4>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque officia laboriosam beatae voluptatem aliquid nihil, i </p>
+                    </li>
+                    <li>
+                        <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
+                        <FaStreetView  style={{fontSize:'3rem',textAlign:'center'}}/>
+                        </div>   
+                        <h4>Cultivate Life Skills</h4>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque officia laboriosam beatae voluptatem aliquid nihil, itaque</p>
+                    </li>
+                    <li>
+                        <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
+                        <FaBook style={{fontSize:'3rem',textAlign:'center'}}/>
+                        </div>   
+                        <h4>Feel-Better Strategies</h4>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque officia laboriosam beatae voluptatem aliquid nihil, itaque q</p>
+                    </li>
+                    <li>
+                        
+                        <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
+                        <FaHeart  style={{fontSize:'3rem',textAlign:'center'}}/>
+                        </div>   
+
+                        <h4>
+                            Dependable Support</h4>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque officia laboriosam beatae voluptatem aliquid nihil, itaque qu </p>
+                    </li>
+                </div>
+                <hr />
+            </div>          
 
 
             <div >
@@ -198,7 +247,7 @@ Get started            </Button>
                     <h2 className={styles.subscribe__title}>Let's keep in touch</h2>
                     <p className={styles.subscribe__copy}>Subscribe to keep up with fresh news and exciting updates. We promise not to spam you!</p>
                     <div className={styles.form}>
-                        <input type="email" style={{borderRadius:"10px 0px 0px 10px"}} className={styles.form__email} placeholder="Enter your email address"
+                        <input type="email" style={{borderRadius:"10px 0px 0px 10px"}} className={styles.form__email} placeholder="example@gmail.com"
                          onChange={(e) => setNewSubscriberEmail(e.target.value)}
                         />
                         <button className={styles.form__button} onClick={handleAddSubscriber}>Send</button>
