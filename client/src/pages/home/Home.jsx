@@ -245,7 +245,7 @@ Get started            </Button>
                 <span style={{color:'#873260'}} >{totalPosts}+</span><span>Articles</span></div>
                 </div>
                 <div style={{textAlign:'center'}}>
-                <div className={styles.comptourwahda}><img src='expertise.png'></img><span style={{color:'#873260'}} >{totalCabinets}+</span><span>articles</span></div>
+                <div className={styles.comptourwahda}><img src='expertise.png'></img><span style={{color:'#873260'}} >{totalCabinets}+</span><span>Cabinets</span></div>
                 </div>
               </div>
             </div>
