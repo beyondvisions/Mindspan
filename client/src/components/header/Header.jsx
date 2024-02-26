@@ -66,7 +66,7 @@ useEffect(() => {
 
   return (
     <>
-    <Navbar className='mr-0' >
+    <Navbar className='mr-0' style={{padding:'10px'}}>
       <Link
         to='/'>
       
