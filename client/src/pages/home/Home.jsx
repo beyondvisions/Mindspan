@@ -345,9 +345,21 @@ Get started            </Button>
                 </div>
             </div>
 
+<div className='containersound'>
+            <div className='sound'>
+              <div>
+            <AudioPlayer audioSrc={aud} label="relaxation"/>
+            </div>
+            <div>
+            <AudioPlayer audioSrc={aud} label="relaxation"/>
+            </div>
+            <div>
+            <AudioPlayer audioSrc={aud} label="relaxation"/>
 
+            </div>
+            </div>
 
-
+            </div>
 
 
             <div style={{paddingTop:'100px'}}>
