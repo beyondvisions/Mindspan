@@ -128,10 +128,20 @@ useEffect(() => {
   fetchCategories();
   fetchPosts();
 }, []);
-console.log(totalCabinets);
 
 
+const [category, setCategory] = useState('événements');
+  const categoriesswitch = ['événements', 'Parent et enfants', 'Santé et Mentale']; // Add your desired categories here
 
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      // Rotate through categories
+      const nextCategoryIndex = (categoriesswitch.indexOf(category) + 1) % categoriesswitch.length;
+      setCategory(categoriesswitch[nextCategoryIndex]);
+    }, 4000); 
+
+    return () => clearInterval(intervalId); // Clean up the interval
+  }, [category, categoriesswitch]);
   return (
     <div >
             <div className={styles.hero}>
@@ -242,7 +252,7 @@ Get started            </Button>
          </div>
          <div>
                 <div >
-                   <RecentPost category='événements' subcategory=''/>
+                   <RecentPost category={category} subcategory=''/>
                 </div>
             </div>
 

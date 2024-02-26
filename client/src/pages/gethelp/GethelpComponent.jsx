@@ -75,7 +75,7 @@ export default function GethelpComponent() {
                                               class="block w-full border disabled:cursor-not-allowed disabled:opacity-50 bg-gray-50 border-gray-300 text-gray-900 focus:border-custom-color focus:ring-custom-color dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-custom-color dark:focus:ring-custom-color p-2.5 text-sm rounded-lg"
 
                                 >
-                                    <option value="">All</option> {/* Default option for all */}
+                                    <option value="">All</option> 
                                     {[...new Set(options.map(option => option.howToHelp))].map((howToHelp, index) => (
                                         <option key={index} value={howToHelp}>
                                             {howToHelp}

@@ -14,13 +14,14 @@ export default function RecentPost({ category, subcategory = '' ,}) {
     fetchPosts();
   }, [category, subcategory]); 
 
+
   return (
     <div>
       <div className='max-w-5xl mx-auto p-3 flex flex-col gap-8 py-7'>
         {posts && posts.length > 0 && (
           <div className='flex flex-col gap-6'>
             <h2 className='text-2xl font-semibold text-center'               style={{color:'#873260'}}
->Recent {category} Posts</h2>
+>Recent {category === 'Santé et Mentale' ? 'santé mentale' : category} Posts</h2>
 <div class="flex flex-col gap-10 md:flex-row md:justify-between md:gap-10">
                {posts.map((post) => (
                 <PostCard key={post._id} post={post} />
