@@ -132,13 +132,12 @@ export default function Evenement() {
                         <h1 style={{ fontSize: '1.5rem'}}><b style={{ color: 'black' }}>Santé mental</b></h1>
                         <br />
                         <p>
-                            "Prioritizing mental health means acknowledging  its profound impact on our lives. Seeking guidance from mental health consultants empowers us to navigate challenges and cultivate resilience."
-                        </p>
+                        Bienvenue dans notre Coin Sensibilisation à la Santé Mentale, où la compréhension, l'empathie et le soutien se croisent. Ici, nous éclairons le paysage souvent négligé du bien-être mental, visant à briser les barrières et à promouvoir la compréhension. Rejoignez-nous alors que nous plongeons dans les réalités de la santé mentale, offrant des idées et un soutien à ceux qui parcourent leur propre chemin vers le bien-être.                        </p>
                     </div>
                     <div className='cardintro'>
                         <div className='cardintrocontenu'>
                             <img src='https://firebasestorage.googleapis.com/v0/b/psychwave-19b6f.appspot.com/o/1708530802270consultation.png?alt=media&token=89e16a69-4cdb-4267-bfff-809cc9fba593' alt='Consultation' />
-                            <h3><b>We offer {totalposts} article for mental helth.</b></h3>
+                            <h3><b>Nous offrons {totalposts} articles sur la santé mentale.</b></h3>
                         </div>
                     </div>
                 </div>

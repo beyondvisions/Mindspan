@@ -130,13 +130,12 @@ console.log(sidebarData.category);
                         <h1 style={{ fontSize: '1.5rem'}}><b style={{ color: 'black' }}>Parent et enfant</b></h1>
                         <br />
                         <p>
-                            "Prioritizing mental health means acknowledging its profound impact on our lives. Seeking guidance from mental health consultants empowers us to navigate challenges and cultivate resilience."
-                        </p>
+                        Cette section vise à améliorer la santé mentale des enfants en aidant leurs parents à adapter des habitudes d’éducation saines recommandées par nos pédopsychiatres. C’est un espace destiné aux parents afin de trouver des réponses et de découvrir le comportement idéal pour aider leurs enfants.                         </p>
                     </div>
                     <div className='cardintro'>
                         <div className='cardintrocontenu'>
                             <img src='https://firebasestorage.googleapis.com/v0/b/psychwave-19b6f.appspot.com/o/1708530802270consultation.png?alt=media&token=89e16a69-4cdb-4267-bfff-809cc9fba593' alt='Consultation' />
-                            <h3><b>We offer {totalposts} article for .</b></h3>
+                            <h3><b>Nous offrons {totalposts} articles pour les parent et enfant .</b></h3>
                         </div>
                     </div>
                 </div>
