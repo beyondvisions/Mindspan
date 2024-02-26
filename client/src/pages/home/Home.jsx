@@ -52,20 +52,29 @@ const handleAddSubscriber = async () => {
     setClickedFilterIndex(index);
 };
 
-const [titles, setTitles] = useState([ 
+const [titles, setTitles] = useState([
   {
-    titre:'Strengthen Mental Resilience',
-    description:'We will help you to improve your mental health'
+    titre: "Découvrez le bien-être mental : là où le savoir rencontre la compassion, et où le soutien s'épanouit.",
+    description: "We will help you to improve your mental health",
   },
   {
-    titre:'Cultivating Mental Toughness',
-    description:'Our support will aid in enhancing your mental well-being.'
+    titre: "Cultivating Mental Toughness",
+    description: "Our support will aid in enhancing your mental well-being.",
   },
   {
-    titre:'Developing Mental Fortitude',
-    description:'Together, we will work on strengthening your mental well-being'
-  }
-])
+    titre: "Naviguer dans le bien-être mental : là où la compréhension rencontre la guérison et où la communauté prospère.",
+    description: "Together, we will work on strengthening your mental well-being",
+  },
+  {
+    titre: "Un sanctuaire pour la santé mentale : où le soutien grandit, la compréhension approfondit et la guérison commence.",
+    description: "Together, we will work on strengthening your mental well-being",
+  },
+  {
+    titre: "Nourrir les esprits, inspirer les cœurs : votre compagnon compatissant sur le chemin du bien-être mental.",
+    description: "Together, we will work on strengthening your mental well-being",
+  },
+]);
+
 
 const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
 
