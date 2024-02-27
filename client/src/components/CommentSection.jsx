@@ -114,7 +114,7 @@ export default function CommentSection({ postId }) {
     <div className='max-w-2xl mx-auto w-full p-3'>
       {currentUser ? (
         <div className='flex items-center gap-1 my-5 text-gray-500 text-sm'>
-          <p>Signed in as:</p>
+      <p>Connecté en tant que :</p>
           <img
             className='h-5 w-5 object-cover rounded-full'
             src={currentUser.profilePicture}
@@ -129,9 +129,9 @@ export default function CommentSection({ postId }) {
         </div>
       ) : (
           <div className='text-sm text-red-500 my-5 flex gap-1'>
-          You must be signed in to comment.
+      Vous devez être connecté pour commenter.
           <Link className='text-black hover:underline' to={'/sign-in'}>
-            Sign In
+          Connexion
           </Link>
         </div>
       )}
@@ -142,7 +142,7 @@ export default function CommentSection({ postId }) {
           className='border border-teal-500 rounded-md p-3'
         >
           <Textarea
-            placeholder='Add a comment...'
+            placeholder='Ajouter un commentaire...'
             rows='4'
             maxLength='300'
             onChange={(e) => setComment(e.target.value)}
@@ -152,13 +152,13 @@ export default function CommentSection({ postId }) {
           />
           <div className='flex justify-between items-center mt-5'>
             <p className='text-gray-500 text-xs'>
-              {300 - comment.length} characters remaining
+            {300 - comment.length} caractères restants
             </p>
             <Button  type='submit'
                   className="focus:border-custom-color focus:ring-custom-color dark:focus:border-custom-color dark:focus:ring-custom-color"
 
             style={{ backgroundColor: '#D294BB' }}>
-              Submit
+              Soumettre
             </Button>
           </div>
           {commentError && (
@@ -169,7 +169,8 @@ export default function CommentSection({ postId }) {
         </form>
       )}
       {comments.length === 0 ? (
-        <p className='text-sm my-5'>No comments yet!</p>
+        <p className='text-sm my-5'>
+        Pas encore de commentaires !</p>
       ) : (
         <>
           <div className='text-sm my-5 flex items-center gap-1'>
@@ -203,17 +204,17 @@ export default function CommentSection({ postId }) {
           <div className='text-center'>
             <HiOutlineExclamationCircle className='h-14 w-14 text-gray-400 dark:text-gray-200 mb-4 mx-auto' />
             <h3 className='mb-5 text-lg text-gray-500 dark:text-gray-400'>
-              Are you sure you want to delete this comment?
+            Êtes-vous sûr de vouloir supprimer ce commentaire ?
             </h3>
             <div className='flex justify-center gap-4'>
               <Button
                 color='failure'
                 onClick={() => handleDelete(commentToDelete)}
               >
-                Yes, I'm sure
-              </Button>
+Oui, je suis sûr             
+ </Button>
               <Button color='gray' onClick={() => setShowModal(false)}>
-                No, cancel
+              Non, annuler
               </Button>
             </div>
           </div>
