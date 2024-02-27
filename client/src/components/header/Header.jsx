@@ -66,8 +66,9 @@ useEffect(() => {
 
   return (
     <div>
-    <Navbar className='mr-0 mx-2' style={{gap:'10px'}}>
-      <Link
+    <Navbar className='mr-0 gap-4'>
+      <div class="mx-auto gap-2 flex flex-wrap items-center justify-between container">
+      <Link 
         to='/'>
       
       <h1 className="text-lg sm:text-xl md:text-3xl"> <b style={{color:'#D294BB'}}>Mind</b>span</h1>
@@ -147,7 +148,9 @@ S'inscrire
           </Link>
           </div>
         )}
+        </div>
             </Navbar>
+
   <div className="containerdropdownkbira">
   
   
