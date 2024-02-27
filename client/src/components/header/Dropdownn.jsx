@@ -89,7 +89,7 @@ const Dropdownn = ({ categories, lab, lab1, lab2, lab3 }) => {
           <span
             onMouseEnter={() => handleHover(lab)}
           >
-            {lab}
+            Parent et enfant
           </span>
           </Link>
         )}
