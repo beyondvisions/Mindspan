@@ -187,35 +187,36 @@ const [category, setCategory] = useState('événements');
         <h3 className={styles.title} style={{padding:'30px 0px'}}>Autorité transparente en matière de santé</h3>
         <p style={{ padding:'10px 10px'}}>Nous sommes fiers d'être reconnus comme un fournisseur fiable et sans but lucratif d'informations de qualité sur la santé..</p>
         <div className={styles.grid}>
-            <li className='shadowcarta'>
-                <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
-                    <FaExchangeAlt style={{fontSize:'3rem',textAlign:'center'}}/>
-                </div>   
-                <h4>Guidance fiable</h4>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque officia laboriosam beatae voluptatem aliquid nihil, i </p>
-            </li>
-            <li>
-                <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
-                    <FaStreetView  style={{fontSize:'3rem',textAlign:'center'}}/>
-                </div>   
-                <h4>Cultiver les compétences de vie</h4>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque officia laboriosam beatae voluptatem aliquid nihil, itaque</p>
-            </li>
-            <li>
-                <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
-                    <FaBook style={{fontSize:'3rem',textAlign:'center'}}/>
-                </div>   
-                <h4>Stratégies pour se sentir mieux</h4>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque officia laboriosam beatae voluptatem aliquid nihil, itaque q</p>
-            </li>
-            <li>
-                <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
-                    <FaHeart  style={{fontSize:'3rem',textAlign:'center'}}/>
-                </div>   
-                <h4>Soutien fiable</h4>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque officia laboriosam beatae voluptatem aliquid nihil, itaque qu </p>
-            </li>
-        </div>
+    <li className='shadowcarta'>
+        <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
+            <FaExchangeAlt style={{fontSize:'3rem',textAlign:'center'}}/>
+        </div>   
+        <h4>Guidance fiable</h4>
+        <p>Des conseils fiables pour vous aider à naviguer dans votre vie quotidienne et à surmonter les défis.</p>
+    </li>
+    <li>
+        <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
+            <FaStreetView  style={{fontSize:'3rem',textAlign:'center'}}/>
+        </div>   
+        <h4>Cultiver les compétences de vie</h4>
+        <p>Apprenez à développer les compétences nécessaires pour réussir dans tous les aspects de votre vie.</p>
+    </li>
+    <li>
+        <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
+            <FaBook style={{fontSize:'3rem',textAlign:'center'}}/>
+        </div>   
+        <h4>Stratégies pour se sentir mieux</h4>
+        <p>Découvrez des stratégies efficaces pour améliorer votre bien-être émotionnel et mental.</p>
+    </li>
+    <li>
+        <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
+            <FaHeart  style={{fontSize:'3rem',textAlign:'center'}}/>
+        </div>   
+        <h4>Soutien fiable</h4>
+        <p>Un soutien fiable est essentiel pour vous aider à traverser les moments difficiles et à vous sentir soutenu.</p>
+    </li>
+</div>
+
         <hr />
     </div> 
     <div className={styles.containcomptourpromax}>
