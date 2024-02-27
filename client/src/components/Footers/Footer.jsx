@@ -31,7 +31,7 @@ const Footer = () => {
             <div className='containerfooter'>
                 <div className='description'>
                     <div className='elementdes'><h3 style={{fontSize:'1.4rem'}}><b style={{color:'black'}}>Mind</b>span</h3></div>
-                    <div className='des'><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare cursus sed nunc eget dictum  Sed ornare cursus sed nunc eget dictumd nunc eget dictum  Sed ornare cursus sed nunc eget dictum  </p></div>
+                    <div className='des'><p>Mindspan est un projet créé par des enthousiastes de la santé mentale qui vise à guider les parents dans l'éducation de leurs enfants en fournissant des outils pratiques pour créer un environnement sain et épanouissant.  </p></div>
                     
                     <div className='containersocial'> 
                         <div> <IonIcon icon={logoFacebook}style={{ fontSize: '25px', margin: '0 10px' }} /></div>
@@ -61,7 +61,7 @@ const Footer = () => {
           <div className='conatinercategories'>
             <div className='titlecateg'>
               <Link to="/ParentEtEnfant">
-              <h3>Parent et enfants</h3>
+              <h3>Parent et enfant</h3>
               </Link>
             </div>
             {categories
@@ -98,7 +98,7 @@ const Footer = () => {
           <div className='conatinercategories'>
             <div className='titlecateg'>
               <Link to='/cabinet'>
-              <h3>cabinets</h3>
+              <h3>Cabinets</h3>
               </Link>
             </div>
             <div className='boxcateg'>
@@ -129,23 +129,23 @@ const Footer = () => {
   <div>
     <div className='boxcateg'>
       <IonIcon icon={chevronForwardOutline} id='iconcart' />
-      <Link to="/MentalHelath"><span>santé mentale</span></Link>
+      <Link to="/MentalHelath"><span>Santé mentale</span></Link>
     </div>
     <div className='boxcateg'>
       <IonIcon icon={chevronForwardOutline} id='iconcart' />
-      <Link to="/ParentEtEnfan"><span>parent et enfant</span></Link>
+      <Link to="/ParentEtEnfan"><span>Parent et enfant</span></Link>
     </div>
     <div className='boxcateg'>
       <IonIcon icon={chevronForwardOutline} id='iconcart' />
-      <Link to="/ParentEtEnfan"><span>evenements</span></Link>
+      <Link to="/ParentEtEnfan"><span>Événements</span></Link>
     </div>
     <div className='boxcateg'>
       <IonIcon icon={chevronForwardOutline} id='iconcart' />
-      <Link to="/cabinet"><span>cabinets</span></Link>
+      <Link to="/cabinet"><span>Cabinets</span></Link>
     </div>
     <div className='boxcateg'>
       <IonIcon icon={chevronForwardOutline} id='iconcart' />
-      <Link to="/"><span>Home</span></Link>
+      <Link to="/"><span>Accueil</span></Link>
     </div>
     <div className='boxcateg'>
       <IonIcon icon={chevronForwardOutline} id='iconcart' />
@@ -153,11 +153,11 @@ const Footer = () => {
     </div>
     <div className='boxcateg'>
       <IonIcon icon={chevronForwardOutline} id='iconcart' />
-      <Link to="/aboutUs"><span>About us</span></Link>
+      <Link to="/aboutUs"><span>À propos de nous</span></Link>
     </div>
     <div className='boxcateg'>
       <IonIcon icon={chevronForwardOutline} id='iconcart' />
-      <Link to="/contact"><span>ContactUs</span></Link>
+      <Link to="/contact"><span>Nous contacter</span></Link>
     </div>
   </div>
 </div>
@@ -166,17 +166,17 @@ const Footer = () => {
                 
             </div>
             <div className='cpoyrights'> 
-                <div className='ecje'><span>&copy; Rights ENETCom Junior Entreprise</span></div>
+                <div className='ecje'><span>&copy; <a href="https://www.facebook.com/enetcomje"> ENETCom Junior Entreprise </a></span></div>
                 <div className='moreinfo'>
                     <div>
                     <Link to="contact">
-                      <span>contactez-nous</span>
+                      <span>Nous contacter</span>
                     </Link>
                     <Link to="/aboutUs">
-                      <span>à propos de nous</span>
+                      <span>À propos de nous</span>
                     </Link>
                     <Link to="/policy">
-                      <span>politique de confidentialité</span>
+                      <span>Politique de confidentialité</span>
                     </Link>
                     </div>
                 </div>
