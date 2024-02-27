@@ -95,10 +95,9 @@ div h3.title {
     padding: 20px 25px;
     border-radius: 5px;
     border: 1px solid #CAD3DB;
-    width: 431px;
+    width: 100%;
     font-size: 18px;
     color: #0F121F;
-    border-radius: 10px 0px 0px 10px;
 }
 
 .form__email input:focus {

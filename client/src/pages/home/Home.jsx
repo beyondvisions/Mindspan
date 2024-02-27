@@ -366,7 +366,7 @@ const [category, setCategory] = useState('événements');
             <h2 className={styles.subscribe__title}>Restons en contact</h2>
             <p className={styles.subscribe__copy}>Abonnez-vous pour suivre les dernières nouvelles et les mises à jour passionnantes. Nous promettons de ne pas vous spammer !</p>
             <div className={styles.form}>
-                <input type="email" style={{borderRadius:"10px 0px 0px 10px"}} className={styles.form__email} placeholder="exemple@gmail.com"
+                <input type="email" style={{borderRadius:"10px 0px 0px 10px",width:'500px',padding:'10px'}} className={styles.form__email} placeholder="exemple@gmail.com"
                     onChange={(e) => setNewSubscriberEmail(e.target.value)}
                 />
                 <button className={styles.form__button} onClick={handleAddSubscriber}>Envoyer</button>
