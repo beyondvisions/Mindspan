@@ -227,7 +227,7 @@ const [category, setCategory] = useState('événements');
     </div> 
     <div className={styles.containcomptourpromax}>
         <div className={styles.title}>
-            <h1 style={{padding:'20px 0px'}}>Vous autonomiser avec nos <Link to='./cabinet'><span className={styles.terapist}> thérapeutes </span></Link> à travers <Link to='MentalHelath'><span style={{color:"#873260"}}> la sensibilisation à la santé mentale </span> </Link></h1>
+            <h1 style={{padding:'20px 0px'}}>Vous autonomiser avec nos <Link to='./cabinet'><span style={{color:"#873260"}}> thérapeutes </span></Link> à travers la sensibilisation à <Link to='MentalHelath'><span style={{color:"#873260"}}> la santé mentale </span> </Link></h1>
             <p style={{padding:'20px 30px'}}>Nous sommes en mission pour fournir un soutien complet en matière de santé mentale. Notre équipe passionnée de professionnels est dédiée à favoriser votre bien-être et votre santé mentale..</p>
         </div> 
         <div className={styles.containcomptour}>
