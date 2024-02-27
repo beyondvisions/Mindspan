@@ -65,12 +65,12 @@ export default function Comment({ comment, onLike, onEdit, onDelete }) {
       <div className='flex-1'>
         <div className='flex items-center mb-1'>
           <span className='font-bold mr-1 text-xs truncate'>
-            {user ? `@${user.username}` : 'anonymous user'}
+            {user ? `@${user.username}` : 'Utilisateur anonyme'}
           </span>
           <span className='text-gray-500 text-xs'>   
             {moment(comment.createdAt).fromNow()}
           </span>
-          {isModified && <span className='text-gray-500 text-xs'>&nbsp; (the comment is modified)</span>}
+          {isModified && <span className='text-gray-500 text-xs'>&nbsp; (le commentaire a été modifié)</span>}
         </div>
         {isEditing ? (
           <>
@@ -87,7 +87,7 @@ export default function Comment({ comment, onLike, onEdit, onDelete }) {
                 className="focus:border-custom-color focus:ring-custom-color dark:focus:border-custom-color dark:focus:ring-custom-color"
                 onClick={handleSave}
               >
-                Save
+                Enregistrer
               </Button>
               <Button
                 type='button'
@@ -96,7 +96,7 @@ export default function Comment({ comment, onLike, onEdit, onDelete }) {
                 
                 onClick={() => setIsEditing(false)}
               >
-                Cancel
+                Annuler
               </Button>
             </div>
           </>
@@ -130,14 +130,14 @@ export default function Comment({ comment, onLike, onEdit, onDelete }) {
                       onClick={handleEdit}
                       className='text-gray-400 hover:text-blue-500'
                     >
-                      Edit
+                      Modifier
                     </button>
                     <button
                       type='button'
                       onClick={() => onDelete(comment._id)}
                       className='text-gray-400 hover:text-red-500'
                     >
-                      Delete
+                      Supprimer
                     </button>
                   </>
                   
