@@ -40,24 +40,28 @@ const Aboutus = () => {
                 </p>    
             </div>
         </div>
+         :
+
         <div className='containerwhy' >
-            <h1 ><b>Why Our Mental Health Consultants are the best Choice</b></h1>
+            <h1 ><b>Nos valeures</b></h1>
            <div className='containercardinfopromax'>
            <div className='containercardinfo'>
                 <div className='cardinfo' id='card11'>
                     <div className='cardinfoimg'><img src='expertise.png'></img></div>
-                    <h2>Expertise Team</h2>
-                    <div className='containp'><p>Lorem ipsum dolor sit amet consectetur. Convallis est urna adipiscing fringilla nulla diam lorem non mauris.</p></div>
+                    <h2>Inclusion</h2>
+                    <div className='containp'><p> Mindspan accepte et respecte les personnes des différentes régions, religions, orientation sexuelle.</p></div>
                 </div>
                 <div className='cardinfo' id='cardinfo1'>
                     <div className='cardinfoimg'><img src='expertise.png'></img></div>
-                    <h2>Expertise Team</h2>
-                    <div className='containp'><p>Lorem ipsum dolor sit amet consectetur. Convallis est urna adipiscing fringilla nulla diam lorem non mauris.</p></div>
+                    <h2>Confidentialité </h2>
+                    <div className='containp'><p> Toutes vos données et situations seront protégées et bien respectées. 
+</p></div>
                 </div>
                 <div className='cardinfo' id='card12'>
                 <div className='cardinfoimg' ><img src='expertise.png'></img></div>
-                    <h2>Expertise Team</h2>
-                    <div className='containp'><p>Lorem ipsum dolor sit amet consectetur. Convallis est urna adipiscing fringilla nulla diam lorem non mauris.</p></div>
+                    <h2>Solidarité</h2>
+                    <div className='containp'><p>nous collaborons avec des experts et avec vous pour créer de l’impact positif ensemble.  
+</p></div>
                 </div>
             </div>
            </div>
