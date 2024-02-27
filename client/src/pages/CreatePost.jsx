@@ -14,7 +14,7 @@ export default function CreatePost() {
   const [imageUploadProgress, setImageUploadProgress] = useState(null);
   const [imageUploadError, setImageUploadError] = useState(null);
   const [formData, setFormData] = useState({
-    category: 'uncategorized',
+    category: '',
     subcategory: '',
   });
   const [publishError, setPublishError] = useState(null);
@@ -114,7 +114,6 @@ export default function CreatePost() {
 
           >
            <option value=''>Select a category</option>
-            <option value='uncategorized'>Uncategorized</option>
             <option value='Santé et Mentale'>Santé et Mentale</option>
             <option value='Parent et enfants'>Parent et enfants</option>
             <option value='événements'>Événements</option>

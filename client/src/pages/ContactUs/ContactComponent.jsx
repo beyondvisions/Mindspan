@@ -62,7 +62,7 @@ function ContactComponent() {
                                 <span>We're all</span>
                                 <span>ears</span>
                             </div>
-                            <div className={styles.app_contact}><b>Contact information : </b>wissham25@gmail.com </div>
+                            <div className={styles.app_contact}><b>Contact information : </b>mind.span.team@gmail.com</div>
                         </div>
                         <div className={styles.screen_body_item}>
                             <div className={styles.app_form}>

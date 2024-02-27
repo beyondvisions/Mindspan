@@ -176,7 +176,6 @@ export default function Dashcat() {
   className="border border-gray-300 rounded-md p-2 mb-2"
 >
   <option value=''>Select a category</option>
-  <option value='uncategorized'>Uncategorized</option>
   <option value='Santé et Mentale'>Santé et Mentale</option>
   <option value='Parent et enfants'>Parent et enfants</option>
   <option value='événements'>Événements</option>
@@ -206,7 +205,6 @@ export default function Dashcat() {
   className="border border-gray-300 rounded-md p-2"
 >
   <option value=''>Select a category</option>
-  <option value='uncategorized'>Uncategorized</option>
   <option value='Santé et Mentale'>Santé et Mentale</option>
   <option value='Parent et enfants'>Parent et enfants</option>
   <option value='événements'>Événements</option>
