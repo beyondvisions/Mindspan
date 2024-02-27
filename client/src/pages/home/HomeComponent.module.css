@@ -268,6 +268,7 @@ div h3.title {
     padding: 20px 10px;
 }
 .containlescomptour{
+    padding: 30px;
     display: flex;
     justify-content: space-evenly;
 }

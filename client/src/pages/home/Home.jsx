@@ -235,20 +235,20 @@ const [category, setCategory] = useState('événements');
             <div className={styles.containlescomptour}>
                 <div style={{textAlign:'center'}}>
                     <div className={styles.comptourwahda}>
-                        <img src='expertise.png'></img>
+                        <img src='innovation.png'></img>
                         <span style={{color:'#873260'}} >{totalCategories}+</span>
                         <span>Catégories</span>
                     </div>
                 </div>
                 <div style={{textAlign:'center'}}>
                     <div className={styles.comptourwahda} >
-                        <img src='expertise.png' alt='test' ></img>
+                        <img src='article.png' alt='test' ></img>
                         <span style={{color:'#873260'}} >{totalPosts}+</span><span>Articles</span>
                     </div>
                 </div>
                 <div style={{textAlign:'center'}}>
                     <div className={styles.comptourwahda}>
-                        <img src='expertise.png'></img>
+                        <img src='building.png'></img>
                         <span style={{color:'#873260'}} >{totalCabinets}+</span>
                         <span>Cabinets</span>
                     </div>
