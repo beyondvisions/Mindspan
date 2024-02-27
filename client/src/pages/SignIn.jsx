@@ -1,5 +1,5 @@
 import { Alert, Button, Label, Spinner, TextInput } from 'flowbite-react';
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import {
@@ -9,6 +9,7 @@ import {
 } from '../redux/user/userSlice';
 
 export default function SignIn() {
+
   const [formData, setFormData] = useState({});
   const { loading, error: errorMessage } = useSelector((state) => state.user);
   const dispatch = useDispatch();
@@ -16,8 +17,12 @@ export default function SignIn() {
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value.trim() });
   };
+  useEffect(() => {
+    dispatch(signInFailure(''));
+  }, [dispatch]);
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     if (!formData.email || !formData.password) {
       return dispatch(signInFailure('Please fill all the fields'));
     }
@@ -34,11 +39,9 @@ export default function SignIn() {
       }
 else{
       if (data.verified) {
-        // User is verified, proceed to the home page
         dispatch(signInSuccess(data));
         navigate('/');
       } else {
-        // User is not verified, redirect to /verify
         dispatch(signInSuccess(data));
         navigate('/verify');
       }}
@@ -65,6 +68,8 @@ else{
                 placeholder='name@gmail.com'
                 id='email'
                 onChange={handleChange}
+                className="focus:border-custom-color focus:ring-custom-color dark:focus:border-custom-color dark:focus:ring-custom-color"
+
               />
             </div>
             <div>
@@ -74,7 +79,7 @@ else{
                 placeholder='**********'
                 id='password'
                 onChange={handleChange}
-                className=" focus:border-custom-color focus:ring-custom-color dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-custom-color dark:focus:ring-custom-color p-2.5 text-sm rounded-lg" 
+                class="block w-full border disabled:cursor-not-allowed disabled:opacity-50 bg-gray-50 border-gray-300 text-gray-900 focus:border-custom-color focus:ring-custom-color dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-custom-color dark:focus:ring-custom-color p-2.5 text-sm rounded-lg" 
              
                 />
  
@@ -85,7 +90,7 @@ else{
                 borderColor: '#D294BB',
               }}
               type='submit'
-              className="focus:border-custom-color focus:ring-custom-color dark:focus:border-custom-color dark:focus:ring-custom-color"
+              class="block w-full border disabled:cursor-not-allowed disabled:opacity-50 bg-gray-50 border-gray-300 text-gray-900 focus:border-custom-color focus:ring-custom-color dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-custom-color dark:focus:ring-custom-color p-2.5 text-sm rounded-lg" 
 
             >
               {loading ? (

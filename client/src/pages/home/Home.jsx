@@ -142,12 +142,11 @@ const [category, setCategory] = useState('événements');
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      // Rotate through categories
       const nextCategoryIndex = (categoriesswitch.indexOf(category) + 1) % categoriesswitch.length;
       setCategory(categoriesswitch[nextCategoryIndex]);
     }, 4000); 
 
-    return () => clearInterval(intervalId); // Clean up the interval
+    return () => clearInterval(intervalId); 
   }, [category, categoriesswitch]);
   return (
     <div>
