@@ -163,7 +163,7 @@ export default function Search() {
         </form>
       </div>
       <div className='w-full'>
-        <div className='p-7 flex flex-wrap gap-4'>
+        <div className='p-7 flex flex-wrap gap-4' style={{justifyContent:'center'}}>
           {!loading && posts.length === 0 && (
             <p className='text-xl text-gray-500'>Aucun article trouvé.</p>
           )}
