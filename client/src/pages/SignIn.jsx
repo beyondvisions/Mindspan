@@ -65,7 +65,6 @@ else{
                 placeholder='name@gmail.com'
                 id='email'
                 onChange={handleChange}
-                class="block w-full border disabled:cursor-not-allowed disabled:opacity-50 bg-gray-50 border-gray-300 text-gray-900 focus:border-custom-color focus:ring-custom-color dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-custom-color dark:focus:ring-custom-color p-2.5 text-sm rounded-lg" 
               />
             </div>
             <div>
@@ -75,7 +74,7 @@ else{
                 placeholder='**********'
                 id='password'
                 onChange={handleChange}
-                class="block w-full border disabled:cursor-not-allowed disabled:opacity-50 bg-gray-50 border-gray-300 text-gray-900 focus:border-custom-color focus:ring-custom-color dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-custom-color dark:focus:ring-custom-color p-2.5 text-sm rounded-lg" 
+                className=" focus:border-custom-color focus:ring-custom-color dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-custom-color dark:focus:ring-custom-color p-2.5 text-sm rounded-lg" 
              
                 />
  
@@ -95,7 +94,7 @@ else{
                   <span className='pl-3'>Chargement...</span>
                 </>
               ) : (
-                'Sign In'
+                'Se connecter'
               )}
             </Button>
           </form>
@@ -103,9 +102,9 @@ else{
           <Link to='/Password' className='text-blue-500'>
             Mot de passe oublié
           </Link>
-          <span className="hidden md:block">Dont Have an account?</span>
+          <span className="hidden md:block">N'avez vous un compte ?</span>
           <Link to='/sign-up' className='text-blue-500'>
-            Sign Up
+            S'inscrire
           </Link>
           </div>
 

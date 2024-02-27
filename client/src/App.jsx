@@ -30,8 +30,11 @@ import Wronpath from './pages/worngpath/Wronpath'
 import Home from './pages/home/Home';
 import GethelpComponent from './pages/gethelp/GethelpComponent'
 import './index.css';
+
+
 export default function App() {
-  
+
+
   return (
     <BrowserRouter>
       <ScrollToTop />

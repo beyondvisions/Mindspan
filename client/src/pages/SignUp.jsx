@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 export default function SignUp() {
   const [formData, setFormData] = useState({});
-  const [errorMessage, setErrorMessage] = useState(null);
+  const [errorMessage, setErrorMessage] = useState('');
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const handleChange = (e) => {
@@ -13,7 +13,7 @@ export default function SignUp() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.username || !formData.email || !formData.password) {
-      return setErrorMessage('Please fill out all fields.');
+      return setErrorMessage('Remplir tous les données.');
     }
     try {
       setLoading(true);
@@ -93,14 +93,14 @@ export default function SignUp() {
                   <span className='pl-3'>Chargement...</span>
                 </>
               ) : (
-                'Sign Up'
+                'S inscrire'
               )}
             </Button>
           </form>
           <div className='flex gap-2 text-sm sm:text-xs mt-5'>
-            <span >Have an account?</span>
+            <span >Avez vous un compte ?</span>
             <Link to='/sign-in' className='text-blue-500'>
-              Sign In
+              Se connecter
             </Link>
           </div>
           {errorMessage && (
