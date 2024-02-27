@@ -71,8 +71,8 @@ const FAQ = () => {
             </div>
             <div className="containerfaq">
                 <div className="titlefaq">
-                    <h2 id="faqtitre">FREQUENTLY ASKED QUESTIONS</h2>
-                    <p id="desfaq">loremlormeloremlormelomroloremlormelormelromelormeleor</p>
+                    <h2 id="faqtitre">Questions fréquemment posées</h2>
+                    <p id="desfaq">Nous sommes là pour répondre à toutes vos questions et vous fournir les informations dont vous avez besoin.</p>
                 </div>
                 <div className="minicontainerfaq">
                     {Faq.map((item, index) => (

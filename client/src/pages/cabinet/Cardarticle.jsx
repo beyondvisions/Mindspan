@@ -5,7 +5,7 @@ const Cardarticle = ({ Data }) => {
   return (
     <div>
       {Data.length === 0 ? (
-        <p style={{textAlign:'center',color:'#ff00a2', fontSize:'2.5rem'}}>No data available</p>
+        <p style={{textAlign:'center',color:'#ff00a2', fontSize:'2.5rem'}}>Aucune donnée disponible</p>
       ) : (
         <div className='cabinetcontainer'>
           {Data.map((item, index) => (
@@ -15,7 +15,7 @@ const Cardarticle = ({ Data }) => {
                 <div className='titlecabinet'>{item.name}</div>
                 <div className='subcategoriecabinet' dangerouslySetInnerHTML={{ __html: item.description }} />
                 <div className='subcategoriecabinet'><span><b>Email :</b> {item.email}</span></div>
-                <div className='subcategoriecabinet'><span><b>Phone Number : </b>{item.phoneNumber}</span></div>
+                <div className='subcategoriecabinet'><span><b>Numéro de téléphone : </b>{item.phoneNumber}</span></div>
                 <div className='more1'>
                   <span><small>#{item.address}</small></span>
                 </div>

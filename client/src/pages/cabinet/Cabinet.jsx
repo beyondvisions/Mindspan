@@ -13,7 +13,7 @@ const Cabinet = () => {
     const [totalCabinets, setTotalCabinets] = useState(0);
     const urlParams = new URLSearchParams(location.search);
     const adresse =  [
-        "All",
+        "Tous",
         "Ariana",
         "Beja",
         "Ben Arous",
@@ -107,14 +107,13 @@ const Cabinet = () => {
                     <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
                         <h1 style={{ fontSize: '1.5rem'}}><b style={{ color: 'black' }}>Mind</b>span</h1>
                         <br />
-                        <p>
-                            "Prioritizing mental health means acknowledging its profound impact on our lives. Seeking guidance from mental health consultants empowers us to navigate challenges and cultivate resilience."
-                        </p>
+                        <p>Nous mettons à votre disposition une vaste gamme de psychiatres et de psychologues répartis dans toutes les régions de la Tunisie, afin de répondre à vos besoins en matière de santé mentale.</p>
+
                     </div>
                     <div className='cardintro'>
                         <div className='cardintrocontenu'>
                             <img src='https://firebasestorage.googleapis.com/v0/b/psychwave-19b6f.appspot.com/o/1708530802270consultation.png?alt=media&token=89e16a69-4cdb-4267-bfff-809cc9fba593' alt='Consultation' />
-                            <h3><b>We offer {totalCabinets} specialists all over Tunisia.</b></h3>
+                            <h3><b>Nous proposons {totalCabinets} spécialistes partout en Tunisie.</b></h3>
                         </div>
                     </div>
                 </div>
@@ -139,7 +138,7 @@ const Cabinet = () => {
             </div>
             <div className='containerpagination'>
                 <Pagination totalSlides={totalSlides} currentIndex={currentIndex} setCurrentIndex={setCurrentIndex} />
-                <button className='next' onClick={nextSlide}>next</button>
+                <button className='next' onClick={nextSlide}>Ensuite</button>
             </div>
         </div>
     );

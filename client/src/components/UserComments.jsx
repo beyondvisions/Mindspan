@@ -147,13 +147,13 @@ export default function UserComments() {
           popup
           size='md'
         >
-          <Modal.Header>Edit Comment</Modal.Header>
+          <Modal.Header>Modifier le commentaire</Modal.Header>
           <Modal.Body>
             <input
               type="text"
               value={editedCommentContent}
               onChange={(e) => setEditedCommentContent(e.target.value)}
-              placeholder="Enter edited content"
+              placeholder="Entrez le contenu édité"
               className="border border-gray-300 rounded-md p-2 mb-2"
             />
             <Button color='gray' onClick={handleUpdateComment}>Update</Button>
@@ -167,18 +167,16 @@ export default function UserComments() {
           popup
           size='md'
         >
-          <Modal.Header>Delete Comment</Modal.Header>
+          <Modal.Header>Supprimer le commentaire</Modal.Header>
           <Modal.Body>
             <h3 className='mb-5 text-lg text-gray-500 dark:text-gray-400'>
-              Are you sure you want to delete this category?
-            </h3>
+            Êtes-vous sûr de vouloir supprimer cette catégorie ?            </h3>
             <div className='flex justify-center gap-4'>
               <Button color='failure' onClick={handleDeleteComment}>
-                Yes, I'm sure
+                Oui
               </Button>
               <Button color='gray' onClick={() => setShowDeleteModal(false)}>
-                No, cancel
-              </Button>
+Non              </Button>
             </div>
           </Modal.Body>
         </Modal>
