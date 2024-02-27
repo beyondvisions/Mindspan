@@ -65,8 +65,8 @@ useEffect(() => {
   };
 
   return (
-    <>
-    <Navbar className='mr-0' style={{padding:'10px'}}>
+    <div>
+    <Navbar className='mr-0 mx-2' style={{gap:'10px'}}>
       <Link
         to='/'>
       
@@ -163,6 +163,6 @@ S'inscrire
         </Dropdownn>
           
 </div>
-    </>
+    </div>
   );
 }
