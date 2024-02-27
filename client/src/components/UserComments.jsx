@@ -87,14 +87,26 @@ export default function UserComments() {
           <div className='flex justify-between  p-3 text-sm font-semibold'>
             <h1 className='text-center p-2'>Vos commentaires</h1>
           </div>
-          <div className='overflow-x-auto'>
-            <Table>
+          <div className='table-auto overflow-x-scroll md:mx-auto p-3 scrollbar scrollbar-track-slate-100 scrollbar-thumb-slate-300 dark:scrollbar-track-slate-700 dark:scrollbar-thumb-slate-500'>
+            <Table hoverable>
+            <Table.Head>
+              <Table.HeadCell>Le contenu</Table.HeadCell>
+              <Table.HeadCell>Nombre de j'aimes</Table.HeadCell>
+              <Table.HeadCell>Titre d'article</Table.HeadCell>
+              <Table.HeadCell>Nom d'utilisateur</Table.HeadCell>
+              <Table.HeadCell>Date de création</Table.HeadCell>
+              <Table.HeadCell>Date de mise ajour</Table.HeadCell>
+              <Table.HeadCell>Mise ajour</Table.HeadCell>
+              <Table.HeadCell> Supprimer</Table.HeadCell>
+
+            </Table.Head>
               <Table.Body>
                 {comments && comments.map((comment) => (
-                  <Table.Row key={comment._id} className='divide-y'>
-                    <Table.Cell>
-                      <p className='line-clamp-2'>{comment.content}</p>
-                    </Table.Cell>
+                  <Table.Row key={comment._id} className='divide-y-2'>
+                    <Table.Cell style={{wordBreak:'break-word'}} >
+              <p className='line-clamp-2'>{comment.content}</p>
+          </Table.Cell>
+
                     <Table.Cell>
                       <p className='line-clamp-2'>{comment.numberOfLikes}</p>
                     </Table.Cell>
@@ -145,7 +157,7 @@ export default function UserComments() {
           show={showEditModal}
           onClose={() => setShowEditModal(false)}
           popup
-          size='md'
+          size='lg'
         >
           <Modal.Header>Modifier le commentaire</Modal.Header>
           <Modal.Body>
@@ -155,6 +167,7 @@ export default function UserComments() {
               onChange={(e) => setEditedCommentContent(e.target.value)}
               placeholder="Entrez le contenu édité"
               className="border border-gray-300 rounded-md p-2 mb-2"
+              style={{width:'430px',height:'200px'}}
             />
             <Button color='gray' onClick={handleUpdateComment}>Update</Button>
           </Modal.Body>

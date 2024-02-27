@@ -74,8 +74,8 @@ export default function DashSidebar() {
               labelColor='dark'
               as='div'
             >
-              history
-            </Sidebar.Item>
+Historique           
+ </Sidebar.Item>
           </Link>
           {currentUser.isAdmin && (
             <Link to='/dashboard?tab=posts'>
