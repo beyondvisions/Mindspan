@@ -75,7 +75,7 @@ export default function UserComments() {
         <div className='flex flex-col p-3 dark:bg-slate-800 gap-4 md:w-72 w-full rounded-md shadow-md'>
           <div className='flex justify-between'>
             <div className=''>
-              <h3 className='text-gray-500 text-md uppercase'>Total Comments</h3>
+              <h3 className='text-gray-500 text-md uppercase'>Nombre total de commentaires</h3>
               <p className='text-2xl'>{totalUserComments}</p>
             </div>
             <HiAnnotation className='bg-indigo-600  text-white rounded-full text-5xl p-3 shadow-lg' />
@@ -85,7 +85,7 @@ export default function UserComments() {
       <div className='flex flex-wrap gap-4 py-3 mx-auto justify-center'>
         <div className='flex flex-col w-full md:w-auto shadow-md p-2 rounded-md dark:bg-gray-800'>
           <div className='flex justify-between  p-3 text-sm font-semibold'>
-            <h1 className='text-center p-2'>Your Comments</h1>
+            <h1 className='text-center p-2'>Vos commentaires</h1>
           </div>
           <div className='overflow-x-auto'>
             <Table>
@@ -119,7 +119,7 @@ export default function UserComments() {
                         }}
                         className='text-teal-500 hover:underline'
                       >
-                        Update
+                        Mise a jour
                       </span>
                     </Table.Cell>
                     <Table.Cell>
@@ -130,7 +130,7 @@ export default function UserComments() {
                         }}
                         className='font-medium text-red-500 hover:underline cursor-pointer'
                       >
-                        Delete
+                        Supprimer
                       </span>
                     </Table.Cell>
                   </Table.Row>

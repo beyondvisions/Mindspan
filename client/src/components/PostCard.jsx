@@ -33,7 +33,7 @@ export default function PostCard({ post }) {
         </div>
        <div>
         <Link to={`/post/${post.slug}`} className='text-custom-color opacity-60 hover:underline'>
-          Read more
+        Lire la suite
         </Link>
         </div>
       </div>

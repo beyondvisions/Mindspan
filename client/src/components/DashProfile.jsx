@@ -215,7 +215,7 @@ export default function DashProfile() {
         <TextInput
           type='text'
           id='username'
-          placeholder='username'
+          placeholder='Nom d utilisateur'
           defaultValue={currentUser.username}
           onChange={handleChange}
           className="block w-full border disabled:cursor-not-allowed disabled:opacity-50 bg-gray-50 border-gray-300 text-gray-900 focus:border-custom-color focus:ring-custom-color dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-custom-color dark:focus:ring-custom-color p-2.5 text-sm rounded-lg" 
@@ -231,7 +231,7 @@ export default function DashProfile() {
         <TextInput
           type='password'
           id='password'
-          placeholder='password'
+          placeholder='mot de passe'
           onChange={handleChange}
           className="block w-full border disabled:cursor-not-allowed disabled:opacity-50 bg-gray-50 border-gray-300 text-gray-900 focus:border-custom-color focus:ring-custom-color dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-custom-color dark:focus:ring-custom-color p-2.5 text-sm rounded-lg" 
 
@@ -247,16 +247,16 @@ export default function DashProfile() {
 
           disabled={loading || imageFileUploading}
         >
-          {loading ? 'Loading...' : 'Update'}
+          {loading ? 'Chargement...' : 'Mettre à jour'}
         </Button>
        
       </form>
       <div className='text-red-500 flex justify-between mt-5'>
         <span onClick={() => setShowModal(true)} className='cursor-pointer'>
-          Delete Account
+        Supprimer le compte
         </span>
         <span onClick={handleSignout} className='cursor-pointer'>
-          Sign Out
+        Déconnexion
         </span>
       </div>
 
@@ -286,14 +286,14 @@ export default function DashProfile() {
           <div className='text-center'>
             <HiOutlineExclamationCircle className='h-14 w-14 text-gray-400 dark:text-gray-200 mb-4 mx-auto' />
             <h3 className='mb-5 text-lg text-gray-500 dark:text-gray-400'>
-              Are you sure you want to delete your account?
+            Êtes-vous sûr de vouloir supprimer votre compte ?
             </h3>
             <div className='flex justify-center gap-4'>
               <Button color='failure' onClick={handleDeleteUser}>
-                Yes, I'm sure
+                Oui
               </Button>
               <Button color='gray' onClick={() => setShowModal(false)}>
-                No, cancel
+               Non
               </Button>
             </div>
           </div>
