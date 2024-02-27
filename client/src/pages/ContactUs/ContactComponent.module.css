@@ -163,7 +163,6 @@ input {
     border-bottom: 1px solid #666;
     color: white;
     font-size: 14px;
-    text-transform: uppercase;
     outline: none;
     transition: border-color .2s;
 }

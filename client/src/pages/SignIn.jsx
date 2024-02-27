@@ -62,7 +62,7 @@ else{
         <div className='flex-1 mx-10'>
           <form className='flex flex-col gap-4' onSubmit={handleSubmit}>
             <div>
-              <Label value='Your email' />
+              <Label value='Votre email' />
               <TextInput
                 type='email'
                 placeholder='name@gmail.com'
@@ -73,7 +73,7 @@ else{
               />
             </div>
             <div>
-              <Label value='Your password' />
+              <Label value='Votre mot de passe ' />
               <TextInput
                 type='password'
                 placeholder='**********'
@@ -90,7 +90,7 @@ else{
                 borderColor: '#D294BB',
               }}
               type='submit'
-              class="block w-full border disabled:cursor-not-allowed disabled:opacity-50 bg-gray-50 border-gray-300 text-gray-900 focus:border-custom-color focus:ring-custom-color dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-custom-color dark:focus:ring-custom-color p-2.5 text-sm rounded-lg" 
+              className="focus:border-custom-color focus:ring-custom-color dark:focus:border-custom-color dark:focus:ring-custom-color"
 
             >
               {loading ? (
