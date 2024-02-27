@@ -133,7 +133,7 @@ const Dropdownn = ({ categories, lab, lab1, lab2, lab3 }) => {
 ))}
             {categories.length > numVisibleItems && 
             <Link to={`${selectedLabel}`} >
-            <li>see more</li>
+            <li>Voir plus</li>
             </Link>}
           </ul>
         </div>
