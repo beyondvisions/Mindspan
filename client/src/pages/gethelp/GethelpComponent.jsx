@@ -141,8 +141,7 @@ export default function GethelpComponent() {
 
                     </ul>
                 </div>
-                <a href="#" className={styles.call_to_us}>
-                <div className={styles.call_to_us__label}>Soutien<br />APPEL GRATUIT</div>                </a>
+
             </div>
         </div>
     );

@@ -34,6 +34,7 @@ div h3.title {
     line-height: 1.2em;
     height: 3.6em;
     overflow: hidden;
+    padding: 10px 50px;
 }
 
 @media (max-width: 600px) {
