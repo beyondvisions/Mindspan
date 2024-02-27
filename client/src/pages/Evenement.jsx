@@ -147,9 +147,9 @@ export default function Evenement() {
           <div style={{display:'flex',flexDirection:'column'}}>
             <div className='deuxinpitcontainer'>
             <div className='inputcontinaer'>
-            <label style={{display:'flex',alignItems:'center'}}>Search Term:</label>
+            <label style={{display:'flex',alignItems:'center'}}>Terme de recherche</label>
             <TextInput
-              placeholder='Search...'
+              placeholder='Chercher...'
               id='searchTerm'
               type='text'
               value={sidebarData.searchTerm}
@@ -157,10 +157,10 @@ export default function Evenement() {
             />
               </div>
               <div  className='inputcontinaer'>
-              <label style={{display:'flex',alignItems:'center'}}>Sort:</label>
+              <label style={{display:'flex',alignItems:'center'}}>Trier:</label>
             <Select onChange={handleChange} value={sidebarData.sort} id='sort'>
-              <option value='desc'>Latest</option>
-              <option value='asc'>Oldest</option>
+              <option value='desc'>Nouveauté</option>
+              <option value='asc'>Ancien</option>
             </Select>
             </div>
             </div>
@@ -192,16 +192,16 @@ export default function Evenement() {
           }}
           className="group flex items-center justify-center p-0.5 text-center font-medium relative focus:z-10 focus:outline-none text-white bg-cyan-700 border border-transparent enabled:hover:bg-cyan-800 dark:bg-cyan-600 dark:enabled:hover:bg-cyan-700 rounded-lg focus:ring-2 focus:border-custom-color focus:ring-custom-color dark:focus:border-custom-color dark:focus:ring-custom-color"
            type='submit'>
-            Apply Filters
-            </Button>
+Appliquer les filtres       
+     </Button>
             </div>
        
         </form>
         <div className='w-full'>
         <div className='p-7 flex flex-wrap gap-4 justify-evenly justify-center-sm'>                 {!loading && posts.length === 0 && (
-            <p className='text-xl text-gray-500'>No posts found.</p>
+            <p className='text-xl text-gray-500'>Aucun article trouvé.</p>
           )}
-          {loading && <p className='text-xl text-gray-500'>Loading...</p>}
+          {loading && <p className='text-xl text-gray-500'>Chargement...</p>}
           {!loading &&
             posts &&
             posts.map((post) => <PostCard key={post._id} post={post} />)}
@@ -211,7 +211,7 @@ export default function Evenement() {
               onClick={handleShowMore}
               className='text-teal-500 text-lg hover:underline p-7 w-full'
             >
-              Show More
+              Voir plus
             </button>
           )}
         </div>
