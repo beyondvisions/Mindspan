@@ -90,22 +90,22 @@ useEffect(() => {
         <Navbar.Toggle />
       <Navbar.Collapse>
         <Navbar.Link active={path === '/'} as={'div'} style={{ color: path === '/' ? '#D294BB' : 'initial',backgroundColor: path === '/' ? 'initial' : 'initial' }}>
-          <Link to='/'>Home</Link>
+          <Link to='/'>Accueil</Link>
         </Navbar.Link>
         <Navbar.Link active={path === '/AboutUs'} as={'div'} style={{ color: path === '/AboutUs' ? '#D294BB' : 'initial',backgroundColor: path === '/' ? 'initial' : 'initial' }}>
-          <Link to='/AboutUs'>About</Link>
+          <Link to='/AboutUs'>À propos</Link>
         </Navbar.Link>
         <Navbar.Link active={path === '/projects'} as={'div'} style={{ color: path === '/search' ? '#D294BB' : 'initial',backgroundColor: path === '/' ? 'initial' : 'initial' }}>
-          <Link to='/search'>Posts</Link>
+          <Link to='/search'>Articles</Link>
         </Navbar.Link>
         <Navbar.Link active={path === '/contact'} as={'div'} style={{ color: path === '/contact' ? '#D294BB' : 'initial',backgroundColor: path === '/' ? 'initial' : 'initial' }}>
-          <Link to='/contact'>Contact Us</Link>
+          <Link to='/contact'>Contactez-nous</Link>
         </Navbar.Link>
         <Navbar.Link active={path === '/FAQ'} as={'div'} style={{ color: path === '/FAQ' ? '#D294BB' : 'initial' ,backgroundColor: path === '/' ? 'initial' : 'initial'}}>
           <Link to='/FAQ'>FAQ</Link>
         </Navbar.Link>
         <Navbar.Link active={path === '/GetHelp'} as={'div'} style={{ color: path === '/GetHelp' ? '#D294BB' : 'initial' ,backgroundColor: path === '/' ? 'initial' : 'initial'}}>
-          <Link to='/GetHelp'>Get Help</Link>
+          <Link to='/GetHelp'>Obtenir de l'aide</Link>
         </Navbar.Link>
        
       </Navbar.Collapse>
@@ -120,21 +120,21 @@ useEffect(() => {
             <Dropdown.Header>
               <span >@{currentUser.username}</span>
               <span >
-                {currentUser.email}
+                {currentUser.username}
               </span>
             </Dropdown.Header>
             <Link to={'/dashboard?tab=profile'}>
-              <Dropdown.Item>Profile</Dropdown.Item>
+              <Dropdown.Item>Profil</Dropdown.Item>
             </Link>
             <Dropdown.Divider />
-            <Dropdown.Item onClick={handleSignout}>Sign out</Dropdown.Item>
+            <Dropdown.Item onClick={handleSignout}>Se déconnecter</Dropdown.Item>
           </Dropdown>
         ) : (
           <div className='flex space-x-4 '>
           <Link to='/sign-in'>
             <Button  style={{ backgroundColor: '#D294BB' }} 
                           className="focus:border-custom-color focus:ring-custom-color dark:focus:border-custom-color dark:focus:ring-custom-color">
-              Sign In
+              Se connecter
             </Button>
           </Link>
             <Link to='/sign-up'>
@@ -142,7 +142,7 @@ useEffect(() => {
                           className="focus:border-custom-color focus:ring-custom-color dark:focus:border-custom-color dark:focus:ring-custom-color"
 
             >
-              Sign up
+S'inscrire
             </Button>
           </Link>
           </div>
