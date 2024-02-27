@@ -62,25 +62,25 @@ function ContactComponent() {
                                     <span>We're all</span>
                                     <span>ears</span>
                                 </div>
-                                <div className={styles.app_contact}><b>CONTACT INFO : </b>wissham25@gmail.com </div>
+                                <div className={styles.app_contact}><b>Contact information : </b>wissham25@gmail.com </div>
                             </div>
                             <div className={styles.screen_body_item}>
                                 <div className={styles.app_form}>
                                     <div className={styles.app_form_group}>
-                                        <input className={styles.app_form_control} placeholder="NAME" name="name" value={formData.name} onChange={handleChange} />
+                                        <input className={styles.app_form_control} placeholder="NAME" name="Nom" value={formData.name} onChange={handleChange} />
                                     </div>
                                     <div className={styles.app_form_group}>
                                         <input className={styles.app_form_control} placeholder="EMAIL" name="email" value={formData.email} onChange={handleChange} />
                                     </div>
                                     <div className={styles.app_form_group}>
-                                        <input className={styles.app_form_control} placeholder="Topic" name="topic" value={formData.topic} onChange={handleChange} />
+                                        <input className={styles.app_form_control} placeholder="Topic" name="Sujet" value={formData.topic} onChange={handleChange} />
                                     </div>
                                     <div className={styles.app_form_group_message}>
                                         <input className={styles.app_form_control} placeholder="MESSAGE" name="message" value={formData.message} onChange={handleChange} />
                                     </div>
                                     <div className={styles.app_form_group_buttons}>
-                                        <button className={styles.app_form_button} type="reset">CANCEL</button>
-                                        <button className={styles.app_form_button} type="submit">SEND</button>
+                                        <button className={styles.app_form_button} type="reset">Annuler</button>
+                                        <button className={styles.app_form_button} type="submit">Envoyer</button>
                                     </div>
                                 </div>
                             </div>
