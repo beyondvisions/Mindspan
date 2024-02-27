@@ -33,7 +33,8 @@ const Aboutus = () => {
   return (
     <div>
         <div className='discover'>
-            <div className='discovimg'><img src='team.png'></img></div>
+            <div className='discovimg'>
+                <img  src='team.png'></img></div>
             <div className='desdiscover'>
                 <h1 id='titled' ><b>Mindspan </b></h1>
                 <p>Mindspan est un projet créé par des enthousiastes de la santé mentale qui vise à guider les parents dans l'éducation de leurs enfants en fournissant des outils pratiques pour créer un environnement sain et épanouissant. Mindspan propose aussi un espace d'échange où des professionnels en psychiatrie partagent des conseils avisés et des informations à propos de la santé mentale.
@@ -47,18 +48,18 @@ const Aboutus = () => {
            <div className='containercardinfopromax'>
            <div className='containercardinfo'>
                 <div className='cardinfo' id='card11'>
-                    <div className='cardinfoimg'><img src='expertise.png'></img></div>
+                    <div className='cardinfoimg'><img src='puzzle.png'></img></div>
                     <h2>Inclusion</h2>
                     <div className='containp'><p> Mindspan accepte et respecte les personnes des différentes régions, religions, orientation sexuelle.</p></div>
                 </div>
                 <div className='cardinfo' id='cardinfo1'>
-                    <div className='cardinfoimg'><img src='expertise.png'></img></div>
+                    <div className='cardinfoimg'><img src='secretfile.png'></img></div>
                     <h2>Confidentialité </h2>
                     <div className='containp'><p> Toutes vos données et situations seront protégées et bien respectées. 
 </p></div>
                 </div>
                 <div className='cardinfo' id='card12'>
-                <div className='cardinfoimg' ><img src='expertise.png'></img></div>
+                <div className='cardinfoimg' ><img src='teamwork.png'></img></div>
                     <h2>Solidarité</h2>
                     <div className='containp'><p>nous collaborons avec des experts et avec vous pour créer de l’impact positif ensemble.  
 </p></div>
