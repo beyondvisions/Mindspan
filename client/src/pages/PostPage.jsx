@@ -93,7 +93,7 @@ console.log(selectedLabel);
         className='self-center mt-5'
       >
         <Button color='gray' pill size='xs'>
-          {post && post.category}
+        {post && (post.category === 'santé' && post.category === 'mentale' ? 'santé mentale' : post.category)}
         </Button>
         
       </Link>
