@@ -157,7 +157,7 @@ const [category, setCategory] = useState('événements');
             {titles.map((item, index) => (
             <div key={index} className={styles.hero_content_area}>
                 <h1>{titles[currentTitleIndex].titre}</h1>
-                <h3>{titles[currentTitleIndex].description}</h3>
+                <h3 style={{fontSize:'1.5erm'}}>{titles[currentTitleIndex].description}</h3>
 
                 <Link to='/search'>
                     <Button style={{ backgroundColor: '#D294BB' }} 
