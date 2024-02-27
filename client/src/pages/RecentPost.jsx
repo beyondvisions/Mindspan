@@ -21,7 +21,8 @@ export default function RecentPost({ category, subcategory = '' ,}) {
         {posts && posts.length > 0 && (
           <div className='flex flex-col gap-6'>
             <h2 className='text-2xl font-semibold text-center'               style={{color:'#873260'}}
->Recent {category === 'Santé et Mentale' ? 'santé mentale' : category} Posts</h2>
+>Les articles de {category === 'Santé et Mentale' ? 'santé mentale' : category} récdntes
+</h2>
 <div class="flex flex-col gap-10 md:flex-row md:justify-between md:gap-10">
                {posts.map((post) => (
                 <PostCard key={post._id} post={post} />
@@ -32,7 +33,7 @@ export default function RecentPost({ category, subcategory = '' ,}) {
               className='text-lg text-white hover:underline text-center'
               style={{color:'#873260'}}
               >
-              View all posts
+              Voir tous les postes
             </Link>
           </div>
         )}
